@@ -10,7 +10,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    RecipesController(repository: FakeRecipesRepository()).getRecipes();
     return MaterialApp(title: 'Home App', home: RecipesPage());
   }
 }

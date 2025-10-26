@@ -14,11 +14,19 @@ class RecipesPage extends StatefulWidget {
 
 class _RecipesPageState extends State<RecipesPage> {
   final _controller = RecipesController(repository: FakeRecipesRepository());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Otus Food')),
       backgroundColor: AppColors.scaffoldBgColor,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        shape: const CircleBorder(),
+        backgroundColor: AppColors.accentBgColor,
+        foregroundColor: Colors.white,
+        child: Icon(Icons.add),
+      ),
       body: FutureBuilder<List<Recipe>>(
         future: _controller.getRecipes(),
         builder: (BuildContext context, AsyncSnapshot<List<Recipe>> snapshot) {
