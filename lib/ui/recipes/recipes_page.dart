@@ -5,14 +5,9 @@ import 'package:flutter_food_otus/model/recipe.dart';
 import 'package:flutter_food_otus/repositories/fake_recipes_repository.dart';
 import 'package:flutter_food_otus/ui/recipes/recipes_list_item.dart';
 
-class RecipesPage extends StatefulWidget {
-  const RecipesPage({super.key});
+class RecipesPage extends StatelessWidget {
+  RecipesPage({super.key});
 
-  @override
-  State<RecipesPage> createState() => _RecipesPageState();
-}
-
-class _RecipesPageState extends State<RecipesPage> {
   final _controller = RecipesController(repository: FakeRecipesRepository());
 
   @override
