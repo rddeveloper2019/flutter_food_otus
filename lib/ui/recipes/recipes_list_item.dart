@@ -25,7 +25,7 @@ class RecipesListItem extends StatelessWidget {
         borderRadius: BorderRadius.all(const Radius.circular(5.0)),
       ),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.stretch, // ← КЛЮЧЕВОЙ момент
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           SizedBox(
             width: 136,
