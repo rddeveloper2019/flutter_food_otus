@@ -1,0 +1,182 @@
+[
+    {
+        "id": 1,
+        "name": "Борщ",
+        "duration": 90,
+        "photo": "https://picsum.photos/300/300"
+    },
+    {
+        "id": 2,
+        "name": "Оливье",
+        "duration": 40,
+        "photo": "https://picsum.photos/300/300"
+    },
+    {
+        "id": 3,
+        "name": "Пельмени домашние",
+        "duration": 120,
+        "photo": "https://picsum.photos/300/300"
+    },
+    {
+        "id": 4,
+        "name": "Гречневая каша с грибами",
+        "duration": 35,
+        "photo": "https://picsum.photos/300/300"
+    },
+    {
+        "id": 5,
+        "name": "Салат Цезарь",
+        "duration": 20,
+        "photo": "https://picsum.photos/300/300"
+    },
+    {
+        "id": 6,
+        "name": "Блины на молоке",
+        "duration": 30,
+        "photo": "https://picsum.photos/300/300"
+    },
+    {
+        "id": 7,
+        "name": "Котлеты по-киевски",
+        "duration": 60,
+        "photo": "https://picsum.photos/300/300"
+    },
+    {
+        "id": 8,
+        "name": "Щи из свежей капусты",
+        "duration": 50,
+        "photo": "https://picsum.photos/300/300"
+    },
+    {
+        "id": 9,
+        "name": "Манник на кефире",
+        "duration": 45,
+        "photo": "https://picsum.photos/300/300"
+    },
+    {
+        "id": 10,
+        "name": "Харчо",
+        "duration": 80,
+        "photo": "https://picsum.photos/300/300"
+    },
+    {
+        "id": 11,
+        "name": "Суп-пюре из брокколи",
+        "duration": 25,
+        "photo": "https://picsum.photos/300/300"
+    },
+    {
+        "id": 12,
+        "name": "Запечённая рыба с лимоном",
+        "duration": 35,
+        "photo": "https://picsum.photos/300/300"
+    },
+    {
+        "id": 13,
+        "name": "Картофель по-деревенски",
+        "duration": 40,
+        "photo": "https://picsum.photos/300/300"
+    },
+    {
+        "id": 14,
+        "name": "Тушеная капуста с яблоками",
+        "duration": 30,
+        "photo": "https://picsum.photos/300/300"
+    },
+    {
+        "id": 15,
+        "name": "Курица в сливочном соусе",
+        "duration": 50,
+        "photo": "https://picsum.photos/300/300"
+    },
+    {
+        "id": 16,
+        "name": "Рис с овощами",
+        "duration": 25,
+        "photo": "https://picsum.photos/300/300"
+    },
+    {
+        "id": 17,
+        "name": "Омлет с сыром и зеленью",
+        "duration": 15,
+        "photo": "https://picsum.photos/300/300"
+    },
+    {
+        "id": 18,
+        "name": "Салат с креветками и авокадо",
+        "duration": 20,
+        "photo": "https://picsum.photos/300/300"
+    },
+    {
+        "id": 19,
+        "name": "Томатный суп с гренками",
+        "duration": 30,
+        "photo": "https://picsum.photos/300/300"
+    },
+    {
+        "id": 20,
+        "name": "Паста с базиликом и пармезаном",
+        "duration": 20,
+        "photo": "https://picsum.photos/300/300"
+    },
+    {
+        "id": 21,
+        "name": "Фаршированные перцы",
+        "duration": 70,
+        "photo": "https://picsum.photos/300/300"
+    },
+    {
+        "id": 22,
+        "name": "Сырники со сметаной",
+        "duration": 25,
+        "photo": "https://picsum.photos/300/300"
+    },
+    {
+        "id": 23,
+        "name": "Куриные наггетсы в духовке",
+        "duration": 35,
+        "photo": "https://picsum.photos/300/300"
+    },
+    {
+        "id": 24,
+        "name": "Свекольник холодный",
+        "duration": 20,
+        "photo": "https://picsum.photos/300/300"
+    },
+    {
+        "id": 25,
+        "name": "Греческий салат",
+        "duration": 15,
+        "photo": "https://picsum.photos/300/300"
+    },
+    {
+        "id": 26,
+        "name": "Плов с курицей",
+        "duration": 60,
+        "photo": "https://picsum.photos/300/300"
+    },
+    {
+        "id": 27,
+        "name": "Лазанья мясная",
+        "duration": 90,
+        "photo": "https://picsum.photos/300/300"
+    },
+    {
+        "id": 28,
+        "name": "Овощное рагу",
+        "duration": 45,
+        "photo": "https://picsum.photos/300/300"
+    },
+    {
+        "id": 29,
+        "name": "Творожная запеканка",
+        "duration": 50,
+        "photo": "https://picsum.photos/300/300"
+    },
+    {
+        "id": 30,
+        "name": "Курица в горчице с мёдом",
+        "duration": 55,
+        "photo": "https://picsum.photos/300/300"
+    }
+]
