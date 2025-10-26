@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_food_otus/theme/constants.dart';
+import 'package:flutter_food_otus/theme/app_colors_extension.dart';
+import 'package:flutter_food_otus/theme/app_colors.dart';
 
 class DurationWidget extends StatelessWidget {
   final int duration;
@@ -14,7 +15,10 @@ class DurationWidget extends StatelessWidget {
       children: [
         Icon(Icons.alarm),
         SizedBox(width: 12),
-        Text("${duration.toString()} минут", style: AppCards.kCardSubtitle),
+        Text(
+          "${duration.toString()} минут",
+          style: TextStyle(fontSize: 16, color: context.appColors.accentColor),
+        ),
       ],
     );
   }

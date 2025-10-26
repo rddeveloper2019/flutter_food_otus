@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_food_otus/theme/constants.dart';
-import 'package:flutter_food_otus/ui/recipes/recipes_controller.dart';
+import 'package:flutter_food_otus/theme/app_colors.dart';
+import 'package:flutter_food_otus/domain/recipes_controller.dart';
 import 'package:flutter_food_otus/model/recipe.dart';
 import 'package:flutter_food_otus/repositories/fake_recipes_repository.dart';
 import 'package:flutter_food_otus/ui/recipes/recipes_list_item.dart';
@@ -19,12 +19,8 @@ class _RecipesPageState extends State<RecipesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Otus Food')),
-      backgroundColor: AppColors.scaffoldBgColor,
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        shape: const CircleBorder(),
-        backgroundColor: AppColors.accentBgColor,
-        foregroundColor: Colors.white,
         child: Icon(Icons.add),
       ),
       body: FutureBuilder<List<Recipe>>(

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_food_otus/model/recipe.dart';
-import 'package:flutter_food_otus/theme/constants.dart';
+import 'package:flutter_food_otus/theme/app_colors_extension.dart';
+import 'package:flutter_food_otus/theme/app_text_colors_extension.dart';
+import 'package:flutter_food_otus/theme/app_colors.dart';
 import 'package:flutter_food_otus/ui/recipes/widgets/duration_widget.dart';
 
 class RecipesListItem extends StatelessWidget {
@@ -12,7 +14,7 @@ class RecipesListItem extends StatelessWidget {
     return Container(
       height: 140,
       decoration: BoxDecoration(
-        color: AppCards.cardColor,
+        color: context.appColors.lightSurface,
         boxShadow: <BoxShadow>[
           BoxShadow(
             color: Color.fromRGBO(149, 146, 146, 0.1),
@@ -56,7 +58,12 @@ class RecipesListItem extends StatelessWidget {
                     recipe.name,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: AppCards.kCardTitle,
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w500,
+                      overflow: TextOverflow.ellipsis,
+                      color: context.appTextColors.blackTextColor,
+                    ),
                   ),
 
                   DurationWidget(duration: recipe.duration),

@@ -1,5 +1,5 @@
 import 'package:flutter_food_otus/model/recipe.dart';
-import 'package:flutter_food_otus/repositories/repository.dart';
+import 'package:flutter_food_otus/domain/repository.dart';
 
 class RecipesController {
   final Repository _repository;
