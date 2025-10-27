@@ -42,7 +42,7 @@ class RecipesPage extends StatelessWidget {
             itemBuilder: (BuildContext context, int index) {
               return RecipesListItem(recipe: recipes[index]);
             },
-            separatorBuilder: (BuildContext context, int index) {
+            separatorBuilder: (_, _) {
               return SizedBox(height: 24);
             },
           );
