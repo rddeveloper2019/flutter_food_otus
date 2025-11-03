@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_food_otus/theme/app_colors.dart';
 import 'package:flutter_food_otus/domain/recipes_controller.dart';
 import 'package:flutter_food_otus/model/recipe.dart';
 import 'package:flutter_food_otus/repositories/fake_recipes_repository.dart';
