@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_food_otus/theme/app_colors.dart';
+import 'package:flutter_food_otus/theme/app_text_colors_extension.dart';
 
 class DetailCard extends StatelessWidget {
   final String title;
@@ -28,7 +28,7 @@ class DetailCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(5),
             border: Border.all(
               width: 2,
-              color: GreenLightThemeTypographyColors.secondaryTextColor,
+              color: context.appTextColors.secondaryTextColor,
             ),
           ),
           child: Stack(
@@ -42,7 +42,7 @@ class DetailCard extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
-                      color: GreenLightThemeTypographyColors.blackTextColor,
+                      color: context.appTextColors.blackTextColor,
                     ),
                   ),
                   SizedBox(height: 8),
@@ -50,7 +50,7 @@ class DetailCard extends StatelessWidget {
                     text,
                     style: TextStyle(
                       fontSize: 12,
-                      color: GreenLightThemeTypographyColors.secondaryTextColor,
+                      color: context.appTextColors.secondaryTextColor,
                     ),
                   ),
 
@@ -62,7 +62,7 @@ class DetailCard extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.w500,
-                          color: GreenLightThemeTypographyColors.blackTextColor,
+                          color: context.appTextColors.blackTextColor,
                         ),
                       ),
                     ),
@@ -75,20 +75,20 @@ class DetailCard extends StatelessWidget {
           right: 0,
           bottom: 0,
           child: Row(
-            mainAxisSize: MainAxisSize.min, // ← важно: не растягивать Row
+            mainAxisSize: MainAxisSize.min,
             children: [
               IconButton(
                 onPressed: onEdit,
                 icon: Icon(
                   Icons.edit,
-                  color: GreenLightThemeTypographyColors.mainTextColor,
+                  color: context.appTextColors.mainTextColor,
                 ),
               ),
               IconButton(
                 onPressed: onDelete,
                 icon: Icon(
                   Icons.delete,
-                  color: GreenLightThemeTypographyColors.mainTextColor,
+                  color: context.appTextColors.mainTextColor,
                 ),
               ),
             ],

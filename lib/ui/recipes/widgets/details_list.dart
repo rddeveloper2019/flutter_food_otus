@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_food_otus/theme/app_colors.dart';
+import 'package:flutter_food_otus/theme/app_text_colors_extension.dart';
 import 'package:flutter_food_otus/ui/recipes/widgets/app_button.dart';
 import 'package:flutter_food_otus/ui/recipes/widgets/detail_card.dart';
 
@@ -28,7 +28,7 @@ class DetailsList extends StatelessWidget {
           textAlign: TextAlign.left,
           title,
           style: TextStyle(
-            color: GreenLightThemeTypographyColors.mainTextColor,
+            color: context.appTextColors.mainTextColor,
             fontSize: 16,
             fontWeight: FontWeight.w500,
           ),
@@ -41,7 +41,7 @@ class DetailsList extends StatelessWidget {
               textAlign: TextAlign.center,
               emptyText,
               style: TextStyle(
-                color: GreenLightThemeTypographyColors.secondaryTextColor,
+                color: context.appTextColors.secondaryTextColor,
                 fontSize: 12,
               ),
             ),

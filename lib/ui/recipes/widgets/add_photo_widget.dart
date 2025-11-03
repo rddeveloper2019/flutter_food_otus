@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_food_otus/theme/app_colors.dart';
+import 'package:flutter_food_otus/theme/app_text_colors_extension.dart';
 import 'package:flutter_food_otus/ui/recipes/widgets/decorated_container.dart';
 
 class AddPhotoWidget extends StatelessWidget {
@@ -27,14 +27,14 @@ class AddPhotoWidget extends StatelessWidget {
               Icon(
                 Icons.add_a_photo,
                 size: 48,
-                color: GreenLightThemeTypographyColors.mainTextColor,
+                color: context.appTextColors.mainTextColor,
               ),
               SizedBox(height: 8),
               Text(
                 text,
 
                 style: TextStyle(
-                  color: GreenLightThemeTypographyColors.mainTextColor,
+                  color: context.appTextColors.mainTextColor,
                   fontSize: 14,
                 ),
               ),
