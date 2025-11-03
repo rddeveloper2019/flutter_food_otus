@@ -7,6 +7,7 @@ import 'package:flutter_food_otus/model/recipe.dart';
 import 'package:flutter_food_otus/model/recipe_step.dart';
 import 'package:flutter_food_otus/repositories/fake_recipes_repository.dart';
 import 'package:flutter_food_otus/theme/app_colors_extension.dart';
+import 'package:flutter_food_otus/ui/recipes/widgets/add_photo_widget.dart';
 import 'package:flutter_food_otus/ui/recipes/widgets/app_input.dart';
 
 class RecipeFormPage extends StatefulWidget {
@@ -56,7 +57,11 @@ class _RecipeFormPageState extends State<RecipeFormPage> {
         child: Padding(
           padding: const EdgeInsets.all(16),
           child: Column(
-            children: [AppInput(labelText: "Название рецепта", numeric: true)],
+            children: [
+              AppInput(labelText: "Название рецепта", numeric: true),
+              SizedBox(height: 17),
+              AddPhotoWidget(text: 'Добавить фото рецепта', onClick: () {}),
+            ],
           ),
         ),
       ),
