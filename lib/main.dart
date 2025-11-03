@@ -11,8 +11,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Otus Food',
-      home: RecipesPage(),
       theme: GreenTheme.lightTheme,
+      home: RecipesPage(),
     );
   }
 }

@@ -1,8 +1,11 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_food_otus/domain/recipes_controller.dart';
 import 'package:flutter_food_otus/model/recipe.dart';
 import 'package:flutter_food_otus/repositories/fake_recipes_repository.dart';
-import 'package:flutter_food_otus/ui/recipes/recipes_list_item.dart';
+import 'package:flutter_food_otus/ui/recipes/recipe_form_page.dart';
+import 'package:flutter_food_otus/ui/recipes/widgets/recipes_list_item.dart';
 
 class RecipesPage extends StatelessWidget {
   RecipesPage({super.key});
@@ -14,7 +17,14 @@ class RecipesPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Otus Food')),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) =>
+                  RecipeFormPage(recipeId: Random().nextInt(15)),
+            ),
+          );
+        },
         child: Icon(Icons.add),
       ),
       body: FutureBuilder<List<Recipe>>(

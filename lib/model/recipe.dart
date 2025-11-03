@@ -4,6 +4,8 @@ class Recipe {
   final int duration;
   final String photo;
 
+  static const asset = 'assets/fake/recipes.json';
+
   Recipe({
     required this.id,
     required this.name,
