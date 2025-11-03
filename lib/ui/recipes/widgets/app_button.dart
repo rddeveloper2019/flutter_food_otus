@@ -6,47 +6,65 @@ class AppButton extends StatelessWidget {
   final String text;
   final VoidCallback? onPressed;
   final bool filled;
+  bool disabled;
 
-  const AppButton({
+  AppButton({
     super.key,
     required this.text,
     this.onPressed,
     this.filled = false,
+    this.disabled = false,
   });
 
   @override
   Widget build(BuildContext context) {
     final accentColor = context.appColors.accentColor;
     final mainColor = context.appColors.mainColor;
+    final disabledColor = context.appTextColors.secondaryTextColor;
     final textColor = filled
         ? Colors.white
         : context.appTextColors.mainTextColor;
 
+    final style = ButtonStyle(
+      padding: WidgetStateProperty.all(
+        const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+      ),
+      shape: WidgetStateProperty.all(
+        RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+      ),
+      fixedSize: WidgetStateProperty.all(const Size(232, 48)),
+    );
+
     if (filled) {
-      return TextButton(
-        onPressed: onPressed,
-        style: TextButton.styleFrom(
-          backgroundColor: accentColor,
-          foregroundColor: Colors.white,
-          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(25),
+      return UnconstrainedBox(
+        child: TextButton(
+          onPressed: disabled ? null : onPressed,
+          style: style.copyWith(
+            backgroundColor: WidgetStateProperty.all(
+              disabled ? disabledColor : accentColor,
+            ),
+            foregroundColor: WidgetStateProperty.all(Colors.white),
           ),
+          child: Text(text, style: TextStyle(color: textColor)),
         ),
-        child: Text(text, style: TextStyle(color: textColor)),
       );
     } else {
-      return OutlinedButton(
-        onPressed: onPressed,
-        style: OutlinedButton.styleFrom(
-          side: BorderSide(color: mainColor, width: 3),
-          foregroundColor: mainColor,
-          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(25),
+      return UnconstrainedBox(
+        child: OutlinedButton(
+          onPressed: disabled ? null : onPressed,
+          style: style.copyWith(
+            side: WidgetStateProperty.all(
+              BorderSide(color: disabled ? disabledColor : mainColor, width: 3),
+            ),
+            foregroundColor: WidgetStateProperty.all(
+              disabled ? disabledColor : mainColor,
+            ),
+          ),
+          child: Text(
+            text,
+            style: TextStyle(color: disabled ? disabledColor : textColor),
           ),
         ),
-        child: Text(text, style: TextStyle(color: textColor)),
       );
     }
   }

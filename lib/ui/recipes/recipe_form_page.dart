@@ -13,6 +13,7 @@ import 'package:flutter_food_otus/ui/recipes/widgets/add_photo_widget.dart';
 import 'package:flutter_food_otus/ui/recipes/widgets/app_button.dart';
 import 'package:flutter_food_otus/ui/recipes/widgets/app_input.dart';
 import 'package:flutter_food_otus/ui/recipes/widgets/detail_card.dart';
+import 'package:flutter_food_otus/ui/recipes/widgets/details_list.dart';
 
 class RecipeFormPage extends StatefulWidget {
   final int recipeId;
@@ -65,25 +66,40 @@ class _RecipeFormPageState extends State<RecipeFormPage> {
               AppInput(labelText: "Название рецепта", numeric: true),
               SizedBox(height: 17),
               AddPhotoWidget(text: 'Добавить фото рецепта', onClick: () {}),
-              SizedBox(height: 17),
-              DetailCard(
-                title: 'Соевый соус',
-                text: '8 ст. ложек',
-                onEdit: () {},
-                onDelete: () {},
-              ),
-              SizedBox(height: 17),
 
-              DetailCard(
-                title: 'Шаг 1',
-                text:
-                    'В маленькой кастрюле соедините соевый соус, 6 столовых ложек воды, мёд, сахар, измельчённый чеснок, имбирь и лимонный сок.',
-                bottomText: '05:30',
-                onEdit: () {},
-                onDelete: () {},
+              SizedBox(height: 17),
+              DetailsList(
+                list: [],
+                buttonText: 'Добавить ингредиент',
+                onAdd: () {},
+                title: 'Ингредиенты',
+                emptyText: 'нет ингредиентов',
               ),
               SizedBox(height: 17),
-              AppButton(text: 'Добавить ингредиент', onPressed: () {}),
+              DetailsList(
+                list: [
+                  DetailCard(
+                    title: 'Шаг 1',
+                    text:
+                        'В маленькой кастрюле соедините соевый соус, 6 столовых ложек воды, мёд, сахар, измельчённый чеснок, имбирь и лимонный сок.',
+                    bottomText: '05:30',
+                    onEdit: () {},
+                    onDelete: () {},
+                  ),
+                  DetailCard(
+                    title: 'Шаг 2',
+                    text:
+                        'В маленькой кастрюле соедините соевый соус, 6 столовых ложек воды, мёд, сахар, измельчённый чеснок, имбирь и лимонный сок.',
+                    bottomText: '05:30',
+                    onEdit: () {},
+                    onDelete: () {},
+                  ),
+                ],
+                buttonText: 'Добавить шаг',
+                onAdd: () {},
+                title: 'Шаги приготовления',
+                emptyText: 'нет шагов приготовления',
+              ),
               SizedBox(height: 17),
               AppButton(
                 text: 'Добавить ингредиент',
