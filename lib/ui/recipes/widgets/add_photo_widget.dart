@@ -32,6 +32,7 @@ class AddPhotoWidget extends StatelessWidget {
               SizedBox(height: 8),
               Text(
                 text,
+
                 style: TextStyle(
                   color: GreenLightThemeTypographyColors.mainTextColor,
                   fontSize: 14,
