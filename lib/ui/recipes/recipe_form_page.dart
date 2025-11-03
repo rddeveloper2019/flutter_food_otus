@@ -1,9 +1,13 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+
 import 'package:flutter_food_otus/domain/recipes_controller.dart';
 import 'package:flutter_food_otus/model/Ingredient.dart';
 import 'package:flutter_food_otus/model/recipe.dart';
-import 'package:flutter_food_otus/repositories/fake_recipes_repository.dart';
 import 'package:flutter_food_otus/model/recipe_step.dart';
+import 'package:flutter_food_otus/repositories/fake_recipes_repository.dart';
+import 'package:flutter_food_otus/theme/app_colors_extension.dart';
+import 'package:flutter_food_otus/ui/recipes/widgets/app_input.dart';
 
 class RecipeFormPage extends StatefulWidget {
   final int recipeId;
@@ -36,6 +40,26 @@ class _RecipeFormPageState extends State<RecipeFormPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text("${widget.recipeId}")));
+    return Scaffold(
+      backgroundColor: context.appColors.lightSurface,
+      appBar: AppBar(
+        elevation: 3,
+        title: Text("Новый рецепт"),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          icon: Icon(Icons.arrow_back, color: context.appColors.mainColor),
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            children: [AppInput(labelText: "Название рецепта", numeric: true)],
+          ),
+        ),
+      ),
+    );
   }
 }

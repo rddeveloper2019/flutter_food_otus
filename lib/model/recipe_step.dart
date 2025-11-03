@@ -17,6 +17,6 @@ class RecipeStep {
 
   @override
   String toString() {
-    return "$name - $duration секунд";
+    return "$name - $duration минут";
   }
 }
