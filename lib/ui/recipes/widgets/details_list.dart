@@ -55,7 +55,7 @@ class DetailsList extends StatelessWidget {
             ),
           ),
         const SizedBox(height: 12),
-        AppButton(text: buttonText, onPressed: onAdd, disabled: list.isEmpty),
+        AppButton(text: buttonText, onPressed: onAdd),
       ],
     );
   }

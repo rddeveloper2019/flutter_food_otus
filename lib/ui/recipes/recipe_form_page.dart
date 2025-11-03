@@ -1,4 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 import 'package:flutter_food_otus/domain/recipes_controller.dart';
@@ -10,7 +12,6 @@ import 'package:flutter_food_otus/theme/app_colors_extension.dart';
 import 'package:flutter_food_otus/ui/recipes/widgets/add_photo_widget.dart';
 import 'package:flutter_food_otus/ui/recipes/widgets/app_button.dart';
 import 'package:flutter_food_otus/ui/recipes/widgets/app_input.dart';
-import 'package:flutter_food_otus/ui/recipes/widgets/detail_card.dart';
 import 'package:flutter_food_otus/ui/recipes/widgets/details_list.dart';
 
 class RecipeFormPage extends StatefulWidget {
@@ -24,22 +25,43 @@ class RecipeFormPage extends StatefulWidget {
 class _RecipeFormPageState extends State<RecipeFormPage> {
   final _controller = RecipesController(repository: FakeRecipesRepository());
   Recipe? recipe;
-  List<Ingredient>? ingredients;
-  List<RecipeStep>? steps;
+  List<Ingredient> _ingredients = [];
+  List<RecipeStep> _steps = [];
+  String photo = '';
+  String name = '';
+
+  final GlobalKey<FormState> _newRecipeFormKey = GlobalKey<FormState>();
+
+  final TextEditingController _nameCtr = TextEditingController();
 
   Future<void> init() async {
     recipe = await _controller.getRecipe(widget.recipeId);
-    ingredients = await _controller.getRecipeIngredients(widget.recipeId);
-    steps = await _controller.getRecipeSteps(widget.recipeId);
+    _ingredients = await _controller.getRecipeIngredients(widget.recipeId);
+    _steps = await _controller.getRecipeSteps(widget.recipeId);
+
     print(recipe);
-    print(ingredients);
-    print(steps);
+    print(_ingredients);
+    print(_steps);
   }
 
   @override
   void initState() {
     super.initState();
     init();
+  }
+
+  @override
+  void dispose() {
+    _nameCtr.dispose();
+    super.dispose();
+  }
+
+  void onSubmit() {
+    String name = _nameCtr.text;
+    print('Сохранено: $name');
+    if (_newRecipeFormKey.currentState?.validate() ?? false) {
+      _newRecipeFormKey.currentState?.save();
+    }
   }
 
   @override
@@ -59,52 +81,55 @@ class _RecipeFormPageState extends State<RecipeFormPage> {
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16),
-          child: Column(
-            children: [
-              AppInput(labelText: "Название рецепта", numeric: true),
-              SizedBox(height: 17),
-              AddPhotoWidget(text: 'Добавить фото рецепта', onClick: () {}),
+          child: Form(
+            key: _newRecipeFormKey,
+            child: Column(
+              children: [
+                AppInput(
+                  labelText: "Название рецепта",
+                  controller: _nameCtr,
+                  validator: (String? string) {
+                    return (string == null || string.isEmpty)
+                        ? 'Введите название рецепта'
+                        : null;
+                  },
+                ),
+                SizedBox(height: 17),
+                AddPhotoWidget(
+                  text: 'Добавить фото рецепта',
+                  photo: photo,
+                  onClick: () {
+                    setState(() {
+                      photo =
+                          "https://cdn.dummyjson.com/recipe-images/${Random().nextInt(50)}.webp";
+                    });
+                  },
+                ),
 
-              SizedBox(height: 17),
-              DetailsList(
-                list: [],
-                buttonText: 'Добавить ингредиент',
-                onAdd: () {},
-                title: 'Ингредиенты',
-                emptyText: 'нет ингредиентов',
-              ),
-              SizedBox(height: 17),
-              DetailsList(
-                list: [
-                  DetailCard(
-                    title: 'Шаг 1',
-                    text:
-                        'В маленькой кастрюле соедините соевый соус, 6 столовых ложек воды, мёд, сахар, измельчённый чеснок, имбирь и лимонный сок.',
-                    bottomText: '05:30',
-                    onEdit: () {},
-                    onDelete: () {},
-                  ),
-                  DetailCard(
-                    title: 'Шаг 2',
-                    text:
-                        'В маленькой кастрюле соедините соевый соус, 6 столовых ложек воды, мёд, сахар, измельчённый чеснок, имбирь и лимонный сок.',
-                    bottomText: '05:30',
-                    onEdit: () {},
-                    onDelete: () {},
-                  ),
-                ],
-                buttonText: 'Добавить шаг',
-                onAdd: () {},
-                title: 'Шаги приготовления',
-                emptyText: 'нет шагов приготовления',
-              ),
-              SizedBox(height: 17),
-              AppButton(
-                text: 'Добавить ингредиент',
-                onPressed: () {},
-                filled: true,
-              ),
-            ],
+                SizedBox(height: 17),
+                DetailsList(
+                  list: [],
+                  buttonText: 'Добавить ингредиент',
+                  onAdd: () {},
+                  title: 'Ингредиенты',
+                  emptyText: 'нет ингредиентов',
+                ),
+                SizedBox(height: 17),
+                DetailsList(
+                  list: [],
+                  buttonText: 'Добавить шаг',
+                  onAdd: () {},
+                  title: 'Шаги приготовления',
+                  emptyText: 'нет шагов приготовления',
+                ),
+                SizedBox(height: 17),
+                AppButton(
+                  text: 'Добавить ингредиент',
+                  onPressed: onSubmit,
+                  filled: true,
+                ),
+              ],
+            ),
           ),
         ),
       ),

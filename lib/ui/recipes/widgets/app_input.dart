@@ -6,13 +6,17 @@ class AppInput extends StatelessWidget {
   final int maxLines;
   final bool multiline;
   final bool numeric;
+  final TextEditingController controller;
+  String? Function(String?)? validator;
 
-  const AppInput({
+  AppInput({
     super.key,
     this.labelText = "",
     this.maxLines = 1,
     this.multiline = false,
     this.numeric = false,
+    this.validator,
+    required this.controller,
   });
 
   @override
@@ -23,6 +27,8 @@ class AppInput extends StatelessWidget {
     );
 
     return TextFormField(
+      controller: controller,
+      validator: validator,
       minLines: multiline ? 3 : 1,
       maxLines: multiline ? null : maxLines,
       keyboardType: keyboardType,
