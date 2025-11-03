@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_food_otus/model/recipe.dart';
 import 'package:flutter_food_otus/theme/app_colors_extension.dart';
 import 'package:flutter_food_otus/theme/app_text_colors_extension.dart';
-import 'package:flutter_food_otus/theme/app_colors.dart';
 import 'package:flutter_food_otus/ui/recipes/widgets/duration_widget.dart';
 
 class RecipesListItem extends StatelessWidget {
