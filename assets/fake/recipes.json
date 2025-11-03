@@ -19,7 +19,7 @@
     },
     {
         "id": 4,
-        "name": "Гречневая каша с грибами",
+        "name": "Куриная карта с грибами",
         "duration": 35,
         "photo": "https://cdn.dummyjson.com/recipe-images/4.webp"
     },
@@ -31,13 +31,13 @@
     },
     {
         "id": 6,
-        "name": "Блины на молоке",
+        "name": "Олинь на молоке",
         "duration": 30,
         "photo": "https://cdn.dummyjson.com/recipe-images/6.webp"
     },
     {
         "id": 7,
-        "name": "Котлеты по-киевски",
+        "name": "Борщ по-киевски",
         "duration": 60,
         "photo": "https://cdn.dummyjson.com/recipe-images/7.webp"
     },
@@ -49,7 +49,7 @@
     },
     {
         "id": 9,
-        "name": "Манник на кефире",
+        "name": "Банник на кефире",
         "duration": 45,
         "photo": "https://cdn.dummyjson.com/recipe-images/9.webp"
     },
@@ -67,25 +67,25 @@
     },
     {
         "id": 12,
-        "name": "Запечённая рыба с лимоном",
+        "name": "Капуста запеченная с лимоном",
         "duration": 35,
         "photo": "https://cdn.dummyjson.com/recipe-images/12.webp"
     },
     {
         "id": 13,
-        "name": "Картофель по-деревенски",
+        "name": "Пасторель по-дереевенски",
         "duration": 40,
         "photo": "https://cdn.dummyjson.com/recipe-images/13.webp"
     },
     {
         "id": 14,
-        "name": "Тушеная капуста с яблоками",
+        "name": "Тушеная капуста с каблаками",
         "duration": 30,
         "photo": "https://cdn.dummyjson.com/recipe-images/14.webp"
     },
     {
         "id": 15,
-        "name": "Курица в сливочном соусе",
+        "name": "Паста в оливковом соусе",
         "duration": 50,
         "photo": "https://cdn.dummyjson.com/recipe-images/15.webp"
     },
@@ -97,7 +97,7 @@
     },
     {
         "id": 17,
-        "name": "Омлет с сыром и зеленью",
+        "name": "Омлет с томатом и зеленью",
         "duration": 15,
         "photo": "https://cdn.dummyjson.com/recipe-images/17.webp"
     },
@@ -157,13 +157,13 @@
     },
     {
         "id": 27,
-        "name": "Лазанья мясная",
+        "name": "Казанский мюслюнар",
         "duration": 90,
         "photo": "https://cdn.dummyjson.com/recipe-images/27.webp"
     },
     {
         "id": 28,
-        "name": "Овощное рагу",
+        "name": "Картофельное рагу",
         "duration": 45,
         "photo": "https://cdn.dummyjson.com/recipe-images/28.webp"
     },
@@ -175,7 +175,7 @@
     },
     {
         "id": 30,
-        "name": "Курица в горчице с мёдом",
+        "name": "Паста в горчице с мудом",
         "duration": 55,
         "photo": "https://cdn.dummyjson.com/recipe-images/30.webp"
     }
