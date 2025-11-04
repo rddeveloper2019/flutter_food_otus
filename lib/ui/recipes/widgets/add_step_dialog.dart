@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_food_otus/ui/recipes/widgets/app_button.dart';
 import 'package:flutter_food_otus/ui/recipes/widgets/app_input.dart';
+import 'package:flutter_food_otus/utils/input_validators.dart';
 
 class AddStepDialog extends StatefulWidget {
   const AddStepDialog({super.key});
@@ -38,21 +39,6 @@ class _AddStepDialogState extends State<AddStepDialog> {
     if (mounted) {
       setState(() {});
     }
-  }
-
-  String? _validateNumber(String? value, {bool isSeconds = false}) {
-    if (value == null || value.isEmpty) {
-      return null;
-    }
-    final parsed = int.tryParse(value);
-
-    if (parsed == null || parsed <= 0) {
-      return 'Должно быть больше 0';
-    }
-    if (isSeconds && parsed > 59) {
-      return 'Не больше 59';
-    }
-    return null;
   }
 
   void onSubmit() {
@@ -112,7 +98,7 @@ class _AddStepDialogState extends State<AddStepDialog> {
                           value?.isEmpty == true &&
                               _secondsController.text.isEmpty
                           ? 'Введите минуты'
-                          : _validateNumber(value),
+                          : validateNumber(value),
                     ),
                   ),
                   SizedBox(width: 5),
@@ -125,7 +111,7 @@ class _AddStepDialogState extends State<AddStepDialog> {
                           value?.isEmpty == true &&
                               _minutesController.text.isEmpty
                           ? 'Введите секунды'
-                          : _validateNumber(value, isSeconds: true),
+                          : validateNumber(value, isSeconds: true),
                     ),
                   ),
                 ],

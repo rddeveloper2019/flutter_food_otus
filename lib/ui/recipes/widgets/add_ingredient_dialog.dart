@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_food_otus/ui/recipes/widgets/app_button.dart';
 import 'package:flutter_food_otus/ui/recipes/widgets/app_input.dart';
+import 'package:flutter_food_otus/utils/ingredient_amount_parsers.dart';
+import 'package:flutter_food_otus/utils/input_validators.dart';
 
 class AddIngredientDialog extends StatefulWidget {
   const AddIngredientDialog({super.key});
@@ -38,9 +40,14 @@ class _AddIngredientDialogState extends State<AddIngredientDialog> {
 
   void onSubmit() {
     if (_formKey.currentState?.validate() ?? false) {
+      final (count: count, measure: measure) = parseIngredientAmount(
+        _countController.text,
+      );
+
       Navigator.pop(context, {
         'name': _nameController.text,
-        'count': _countController.text,
+        'count': count,
+        'measure': measure,
       });
     }
   }
@@ -70,16 +77,13 @@ class _AddIngredientDialogState extends State<AddIngredientDialog> {
               AppInput(
                 labelText: "Название ингредиента",
                 controller: _nameController,
-                validator: (value) => value?.isEmpty == true
-                    ? 'Введите название ингредиента'
-                    : null,
+                validator: validIngredientName,
               ),
               const SizedBox(height: 12),
               AppInput(
                 labelText: "Количество",
                 controller: _countController,
-                validator: (value) =>
-                    value?.isEmpty == true ? 'Введите количество' : null,
+                validator: validIngredientCount,
               ),
               const SizedBox(height: 50),
               Align(
