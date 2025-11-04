@@ -9,6 +9,7 @@ import 'package:flutter_food_otus/model/recipe.dart';
 import 'package:flutter_food_otus/model/recipe_step.dart';
 import 'package:flutter_food_otus/repositories/fake_recipes_repository.dart';
 import 'package:flutter_food_otus/theme/app_colors_extension.dart';
+import 'package:flutter_food_otus/ui/recipes/widgets/add_ingredient_dialog.dart';
 import 'package:flutter_food_otus/ui/recipes/widgets/add_photo_widget.dart';
 import 'package:flutter_food_otus/ui/recipes/widgets/app_button.dart';
 import 'package:flutter_food_otus/ui/recipes/widgets/app_input.dart';
@@ -33,6 +34,8 @@ class _RecipeFormPageState extends State<RecipeFormPage> {
   final GlobalKey<FormState> _newRecipeFormKey = GlobalKey<FormState>();
 
   final TextEditingController _nameCtr = TextEditingController();
+  final TextEditingController _ingredientNameCtr = TextEditingController();
+  final TextEditingController _ingredientCountCtr = TextEditingController();
 
   Future<void> init() async {
     recipe = await _controller.getRecipe(widget.recipeId);
@@ -53,6 +56,8 @@ class _RecipeFormPageState extends State<RecipeFormPage> {
   @override
   void dispose() {
     _nameCtr.dispose();
+    _ingredientNameCtr.dispose();
+    _ingredientCountCtr.dispose();
     super.dispose();
   }
 
@@ -110,7 +115,18 @@ class _RecipeFormPageState extends State<RecipeFormPage> {
                 DetailsList(
                   list: [],
                   buttonText: 'Добавить ингредиент',
-                  onAdd: () {},
+                  onAdd: () async {
+                    final result = await showDialog(
+                      context: context,
+                      builder: (context) => const AddIngredientDialog(),
+                    );
+
+                    if (result != null) {
+                      final name = result['name'];
+                      final count = result['count'];
+                      print('Добавлен ингредиент: $name — $count');
+                    }
+                  },
                   title: 'Ингредиенты',
                   emptyText: 'нет ингредиентов',
                 ),
