@@ -27,7 +27,9 @@ class AppInput extends StatelessWidget {
     );
     final style = numeric
         ? const TextStyle(fontSize: 20, fontWeight: FontWeight.w500)
-        : const TextStyle(fontSize: 16);
+        : multiline
+        ? const TextStyle(fontSize: 16)
+        : const TextStyle(fontSize: 16, fontWeight: FontWeight.w500);
 
     return TextFormField(
       controller: controller,
