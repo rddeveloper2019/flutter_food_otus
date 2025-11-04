@@ -20,12 +20,14 @@ class _AddStepDialogState extends State<AddStepDialog> {
     super.initState();
     _textController.addListener(_onTextChanged);
     _minutesController.addListener(_onTextChanged);
+    _secondsController.addListener(_onTextChanged);
   }
 
   @override
   void dispose() {
     _textController.removeListener(_onTextChanged);
     _minutesController.removeListener(_onTextChanged);
+    _secondsController.removeListener(_onTextChanged);
     _textController.dispose();
     _minutesController.dispose();
     _secondsController.dispose();
@@ -38,12 +40,31 @@ class _AddStepDialogState extends State<AddStepDialog> {
     }
   }
 
+  String? _validateNumber(String? value, {bool isSeconds = false}) {
+    if (value == null || value.isEmpty) {
+      return null;
+    }
+    final parsed = int.tryParse(value);
+
+    if (parsed == null || parsed <= 0) {
+      return 'Должно быть больше 0';
+    }
+    if (isSeconds && parsed > 59) {
+      return 'Не больше 59';
+    }
+    return null;
+  }
+
   void onSubmit() {
     if (_formKey.currentState?.validate() ?? false) {
       Navigator.pop(context, {
         'text': _textController.text,
-        'minutes': _minutesController.text,
-        'seconds': _secondsController.text,
+        'minutes': _minutesController.text.isEmpty
+            ? 0
+            : int.parse(_minutesController.text),
+        'seconds': _secondsController.text.isEmpty
+            ? 0
+            : int.parse(_secondsController.text),
       });
     }
   }
@@ -91,7 +112,7 @@ class _AddStepDialogState extends State<AddStepDialog> {
                           value?.isEmpty == true &&
                               _secondsController.text.isEmpty
                           ? 'Введите минуты'
-                          : null,
+                          : _validateNumber(value),
                     ),
                   ),
                   SizedBox(width: 5),
@@ -104,7 +125,7 @@ class _AddStepDialogState extends State<AddStepDialog> {
                           value?.isEmpty == true &&
                               _minutesController.text.isEmpty
                           ? 'Введите секунды'
-                          : null,
+                          : _validateNumber(value, isSeconds: true),
                     ),
                   ),
                 ],

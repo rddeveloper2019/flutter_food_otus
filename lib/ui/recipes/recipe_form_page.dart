@@ -14,7 +14,9 @@ import 'package:flutter_food_otus/ui/recipes/widgets/add_photo_widget.dart';
 import 'package:flutter_food_otus/ui/recipes/widgets/add_step_dialog.dart';
 import 'package:flutter_food_otus/ui/recipes/widgets/app_button.dart';
 import 'package:flutter_food_otus/ui/recipes/widgets/app_input.dart';
+import 'package:flutter_food_otus/ui/recipes/widgets/detail_card.dart';
 import 'package:flutter_food_otus/ui/recipes/widgets/details_list.dart';
+import 'package:flutter_food_otus/utils/format_duration.dart';
 
 class RecipeFormPage extends StatefulWidget {
   final int recipeId;
@@ -133,7 +135,17 @@ class _RecipeFormPageState extends State<RecipeFormPage> {
                 ),
                 SizedBox(height: 17),
                 DetailsList(
-                  list: [],
+                  list: _steps.asMap().entries.map((entry) {
+                    final index = entry.key;
+                    final step = entry.value;
+                    return DetailCard(
+                      title: "Шаг ${index + 1}",
+                      text: step.name,
+                      onEdit: () {},
+                      onDelete: () {},
+                      bottomText: formatDuration(step.duration),
+                    );
+                  }).toList(),
                   buttonText: 'Добавить шаг',
                   onAdd: () async {
                     final result = await showDialog(
@@ -145,6 +157,15 @@ class _RecipeFormPageState extends State<RecipeFormPage> {
                       final text = result['text'];
                       final minutes = result['minutes'];
                       final seconds = result['seconds'];
+
+                      final recipeStep = RecipeStep(
+                        name: text,
+                        duration: minutes * 60 + seconds,
+                      );
+
+                      setState(() {
+                        _steps.add(recipeStep);
+                      });
                       print('Добавлен ингредиент: $text — $minutes - $seconds');
                     }
                   },

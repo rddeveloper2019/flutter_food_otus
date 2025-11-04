@@ -1,5 +1,5 @@
 class Ingredient {
-  final int id;
+  final int? id;
   final String name;
   final int caloriesForUnit;
   final int measureUnitId;
@@ -9,11 +9,11 @@ class Ingredient {
   static const asset = 'assets/fake/ingredients.json';
 
   Ingredient({
-    required this.id,
     required this.name,
     required this.caloriesForUnit,
     required this.measureUnitId,
     this.measureSimpleUnitId,
+    this.id,
   });
 
   factory Ingredient.fromJson(Map<String, dynamic> json) {

@@ -7,9 +7,9 @@ class AppInput extends StatelessWidget {
   final bool multiline;
   final bool numeric;
   final TextEditingController controller;
-  String? Function(String?)? validator;
+  final String? Function(String?)? validator;
 
-  AppInput({
+  const AppInput({
     super.key,
     this.labelText = "",
     this.maxLines = 1,
@@ -26,8 +26,8 @@ class AppInput extends StatelessWidget {
       multiline,
     );
     final style = numeric
-        ? TextStyle(fontSize: 20, fontWeight: FontWeight.w500)
-        : TextStyle(fontSize: 16);
+        ? const TextStyle(fontSize: 20, fontWeight: FontWeight.w500)
+        : const TextStyle(fontSize: 16);
 
     return TextFormField(
       controller: controller,
@@ -38,7 +38,7 @@ class AppInput extends StatelessWidget {
       inputFormatters: inputFormatters,
       textInputAction: textInputAction,
       style: style,
-      decoration: InputDecoration(labelText: labelText),
+      decoration: InputDecoration(labelText: labelText, errorMaxLines: null),
     );
   }
 
