@@ -1,30 +1,36 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
+import 'dart:math';
 
 import 'package:flutter/services.dart';
 
 import 'package:flutter_food_otus/domain/repository.dart';
 import 'package:flutter_food_otus/model/Ingredient.dart';
-import 'package:flutter_food_otus/model/measure_simple_unit.dart';
+import 'package:flutter_food_otus/model/measure_unit.dart';
 import 'package:flutter_food_otus/model/recipe.dart';
 import 'package:flutter_food_otus/model/recipe_ingredients_link.dart';
 import 'package:flutter_food_otus/model/recipe_step_link.dart';
 import 'package:flutter_food_otus/model/recipe_step.dart';
+import 'package:flutter_food_otus/utils/ingredient_amount_parsers.dart';
 
 class FakeRecipesRepository implements Repository {
+  static final FakeRecipesRepository _instance =
+      FakeRecipesRepository._internal();
+
+  FakeRecipesRepository._internal();
+
+  factory FakeRecipesRepository() => _instance;
+
   List<Recipe> _recipes = [];
   List<Ingredient> _ingredients = [];
   List<RecipeStep> _steps = [];
   List<RecipeIngredientsLink> _recipeIngredientsLinks = [];
   List<RecipeStepLink> _recipeStepLinks = [];
-  List<MeasureSimpleUnit> _measureSimpleUnits = [];
+  List<MeasureUnit> _measureUnits = [];
+  final _random = Random();
 
-  Future<void> init() async {
-    initRecipeSteps();
-    initIngredients();
-    initMeasureSimpleUnits();
-    initRecipeStepsLinks();
-    initRecipeIngredientsLinks();
+  int generateRandomId() {
+    return _random.nextInt(1000000000);
   }
 
   Future<void> initRecipes() async {
@@ -57,15 +63,13 @@ class FakeRecipesRepository implements Repository {
     }
   }
 
-  Future<void> initMeasureSimpleUnits() async {
-    final String jsonString = await rootBundle.loadString(
-      MeasureSimpleUnit.asset,
-    );
+  Future<void> initMeasureUnits() async {
+    final String jsonString = await rootBundle.loadString(MeasureUnit.asset);
 
     final List<dynamic> jsonList = jsonDecode(jsonString);
 
     for (var json in jsonList) {
-      _measureSimpleUnits.add(MeasureSimpleUnit.fromJson(json));
+      _measureUnits.add(MeasureUnit.fromJson(json));
     }
   }
 
@@ -145,8 +149,8 @@ class FakeRecipesRepository implements Repository {
       await initIngredients();
     }
 
-    if (_measureSimpleUnits.isEmpty) {
-      await initMeasureSimpleUnits();
+    if (_measureUnits.isEmpty) {
+      await initMeasureUnits();
     }
 
     final links = _recipeIngredientsLinks
@@ -159,13 +163,41 @@ class FakeRecipesRepository implements Repository {
       final result = _ingredients.firstWhere(
         (ingredient) => ingredient.id == link.ingredientId,
       );
-      final measureString = _measureSimpleUnits.firstWhere(
-        (measure) => measure.id == result.measureSimpleUnitId,
+
+      final measureUnit = _measureUnits.firstWhere(
+        (measure) => measure.id == result.measureUnitId,
       );
-      result.measureString = measureString.unit;
+
+      if (measureUnit != null) {
+        result.measureString = formatIngredientAmount(
+          count: link.count,
+          measure: (
+            one: measureUnit.one,
+            few: measureUnit.few,
+            many: measureUnit.many,
+          ),
+        );
+      }
+
       ingredients.add(result);
     }
 
     return ingredients;
+  }
+
+  @override
+  Future<void> createRecipe({
+    required String name,
+    required String photo,
+    required List<IngredientView> ingredients,
+    required List<RecipeStep> steps,
+  }) async {
+    final newRecipe = Recipe(
+      id: generateRandomId(),
+      name: name,
+      photo: photo,
+      duration: steps.fold(0, (sum, recipe) => sum + recipe.duration) ~/ 60,
+    );
+    _recipes.insert(0, newRecipe);
   }
 }

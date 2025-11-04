@@ -65,11 +65,11 @@ class _RecipeFormPageState extends State<RecipeFormPage> {
     }
   }
 
-  void onSubmit() {
+  Future<void> onSubmit() async {
     if (_newRecipeFormKey.currentState?.validate() ?? false) {
       _newRecipeFormKey.currentState?.save();
 
-      _controller.createNewRecipe(
+      await _controller.createRecipe(
         name: _recipeName!,
         photo: _recipePhoto!,
         ingredients: _ingredients,
@@ -116,6 +116,9 @@ class _RecipeFormPageState extends State<RecipeFormPage> {
                   text: 'Добавить фото рецепта',
                   photo: _recipePhoto ?? '',
                   onClick: () {
+                    FocusScope.of(
+                      context,
+                    ).unfocus(disposition: UnfocusDisposition.scope);
                     setState(() {
                       _recipePhoto =
                           "https://cdn.dummyjson.com/recipe-images/${Random().nextInt(50)}.webp";
@@ -144,6 +147,9 @@ class _RecipeFormPageState extends State<RecipeFormPage> {
                   }).toList(),
                   buttonText: 'Добавить ингредиент',
                   onAdd: () async {
+                    FocusScope.of(
+                      context,
+                    ).unfocus(disposition: UnfocusDisposition.scope);
                     final input = await showDialog<IngredientInputResult>(
                       context: context,
                       builder: (context) => const AddIngredientDialog(),
@@ -187,6 +193,9 @@ class _RecipeFormPageState extends State<RecipeFormPage> {
                   }).toList(),
                   buttonText: 'Добавить шаг',
                   onAdd: () async {
+                    FocusScope.of(
+                      context,
+                    ).unfocus(disposition: UnfocusDisposition.scope);
                     final input = await showDialog<StepInputResult>(
                       context: context,
                       builder: (context) => const AddStepDialog(),
@@ -214,7 +223,13 @@ class _RecipeFormPageState extends State<RecipeFormPage> {
                 AppButton(
                   text: 'Добавить ингредиент',
                   disabled: disabled,
-                  onPressed: onSubmit,
+                  onPressed: () async {
+                    FocusScope.of(
+                      context,
+                    ).unfocus(disposition: UnfocusDisposition.scope);
+                    await onSubmit();
+                    Navigator.of(context).pop(true);
+                  },
                   filled: true,
                 ),
               ],

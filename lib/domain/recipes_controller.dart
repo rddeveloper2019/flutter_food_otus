@@ -22,19 +22,21 @@ class RecipesController {
     return _repository.fetchRecipeStepsById(recipeId);
   }
 
-  Future<List<Ingredient>> getRecipeIngredients(int recipeId) {
+  Future<List<Ingredient>> getRecipeIngredients(int recipeId) async {
     return _repository.fetchIngredientsById(recipeId);
   }
 
-  Future<void> createNewRecipe({
+  Future<void> createRecipe({
     required String name,
     required String photo,
     required List<IngredientView> ingredients,
     required List<RecipeStep> steps,
-  }) async {
-    print('(**) => name:  ${name}');
-    print('(**) => photo:  ${photo}');
-    print('(**) => ingredients:  ${ingredients}');
-    print('(**) => steps:  ${steps}');
+  }) {
+    return _repository.createRecipe(
+      name: name,
+      photo: photo,
+      ingredients: ingredients,
+      steps: steps,
+    );
   }
 }

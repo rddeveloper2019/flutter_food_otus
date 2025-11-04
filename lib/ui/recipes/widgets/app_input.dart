@@ -32,6 +32,7 @@ class AppInput extends StatelessWidget {
         : const TextStyle(fontSize: 16, fontWeight: FontWeight.w500);
 
     return TextFormField(
+      autofocus: false,
       controller: controller,
       validator: validator,
       minLines: multiline ? 3 : 1,

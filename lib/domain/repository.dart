@@ -7,4 +7,10 @@ abstract class Repository {
   Future<Recipe?> fetchRecipe(int id);
   Future<List<Ingredient>> fetchIngredientsById(int id);
   Future<List<RecipeStep>> fetchRecipeStepsById(int id);
+  Future<void> createRecipe({
+    required String name,
+    required String photo,
+    required List<IngredientView> ingredients,
+    required List<RecipeStep> steps,
+  });
 }

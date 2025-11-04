@@ -5,7 +5,6 @@ class Ingredient {
   final String name;
   final int caloriesForUnit;
   final int measureUnitId;
-  int? measureSimpleUnitId;
   String measureString = "";
 
   static const asset = 'assets/fake/ingredients.json';
@@ -14,7 +13,6 @@ class Ingredient {
     required this.name,
     required this.caloriesForUnit,
     required this.measureUnitId,
-    this.measureSimpleUnitId,
     this.id,
   });
 
@@ -23,20 +21,18 @@ class Ingredient {
     final name = json['name'] as String;
     final caloriesForUnit = json['caloriesForUnit'] as int;
     final measureUnitId = json['measureUnit']['id'] as int;
-    final measureSimpleUnitId = json['measureSimpleUnit']['id'] as int;
 
     return Ingredient(
       id: id,
       name: name,
       caloriesForUnit: caloriesForUnit,
       measureUnitId: measureUnitId,
-      measureSimpleUnitId: measureSimpleUnitId,
     );
   }
 
   @override
   String toString() {
-    return "$name - $measureString";
+    return "$name - $measureString - $measureUnitId";
   }
 }
 

@@ -3,7 +3,7 @@ class MeasureUnit {
   final String one;
   final String few;
   final String many;
-
+  static const asset = 'assets/fake/measure_units.json';
   MeasureUnit({
     required this.one,
     required this.few,
