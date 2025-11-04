@@ -24,10 +24,11 @@ class GreenTheme {
     colorScheme: ColorScheme.fromSwatch(primarySwatch: primarySwatch),
     appBarTheme: AppBarTheme(
       backgroundColor: GreenLightThemeSurfaceColors.accentColor,
-      foregroundColor: Colors.white,
+      foregroundColor: GreenLightThemeSurfaceColors.lightSurface,
       iconTheme: IconThemeData(
-        color: GreenLightThemeTypographyColors.mainTextColor,
+        color: GreenLightThemeSurfaceColors.lightSurface,
       ),
+      centerTitle: true,
     ),
     floatingActionButtonTheme: FloatingActionButtonThemeData(
       shape: const CircleBorder(),

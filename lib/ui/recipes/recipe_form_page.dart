@@ -81,7 +81,7 @@ class _RecipeFormPageState extends State<RecipeFormPage> {
           onPressed: () {
             Navigator.of(context).pop();
           },
-          icon: Icon(Icons.arrow_back, color: context.appColors.mainColor),
+          icon: Icon(Icons.arrow_back),
         ),
       ),
       body: SingleChildScrollView(
