@@ -37,32 +37,30 @@ class GreenTheme {
     scaffoldBackgroundColor: GreenLightThemeSurfaceColors.secondaryColor,
     cardTheme: CardThemeData(color: GreenLightThemeSurfaceColors.lightSurface),
     inputDecorationTheme: InputDecorationThemeData(
-      contentPadding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 8.0),
+      floatingLabelBehavior: FloatingLabelBehavior.always,
+      isDense: true,
+      contentPadding: EdgeInsets.only(top: 8, left: 8, right: 8, bottom: 5),
       filled: true,
       fillColor: GreenLightThemeSurfaceColors.secondaryColor,
       labelStyle: TextStyle(
         color: GreenLightThemeTypographyColors.mainTextColor,
       ),
-      floatingLabelBehavior: FloatingLabelBehavior.always,
       floatingLabelStyle: TextStyle(
         color: GreenLightThemeTypographyColors.mainTextColor,
       ),
       border: UnderlineInputBorder(
-        borderRadius: BorderRadius.circular(5),
         borderSide: BorderSide(
           width: 2,
           color: GreenLightThemeSurfaceColors.mainColor,
         ),
       ),
       enabledBorder: UnderlineInputBorder(
-        borderRadius: BorderRadius.circular(5),
         borderSide: BorderSide(
           width: 2,
           color: GreenLightThemeSurfaceColors.mainColor,
         ),
       ),
       focusedBorder: UnderlineInputBorder(
-        borderRadius: BorderRadius.circular(5),
         borderSide: BorderSide(
           width: 2,
           color: GreenLightThemeSurfaceColors.mainColor,

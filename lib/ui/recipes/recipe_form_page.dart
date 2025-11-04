@@ -11,6 +11,7 @@ import 'package:flutter_food_otus/repositories/fake_recipes_repository.dart';
 import 'package:flutter_food_otus/theme/app_colors_extension.dart';
 import 'package:flutter_food_otus/ui/recipes/widgets/add_ingredient_dialog.dart';
 import 'package:flutter_food_otus/ui/recipes/widgets/add_photo_widget.dart';
+import 'package:flutter_food_otus/ui/recipes/widgets/add_step_dialog.dart';
 import 'package:flutter_food_otus/ui/recipes/widgets/app_button.dart';
 import 'package:flutter_food_otus/ui/recipes/widgets/app_input.dart';
 import 'package:flutter_food_otus/ui/recipes/widgets/details_list.dart';
@@ -134,7 +135,19 @@ class _RecipeFormPageState extends State<RecipeFormPage> {
                 DetailsList(
                   list: [],
                   buttonText: 'Добавить шаг',
-                  onAdd: () {},
+                  onAdd: () async {
+                    final result = await showDialog(
+                      context: context,
+                      builder: (context) => const AddStepDialog(),
+                    );
+
+                    if (result != null) {
+                      final text = result['text'];
+                      final minutes = result['minutes'];
+                      final seconds = result['seconds'];
+                      print('Добавлен ингредиент: $text — $minutes - $seconds');
+                    }
+                  },
                   title: 'Шаги приготовления',
                   emptyText: 'нет шагов приготовления',
                 ),

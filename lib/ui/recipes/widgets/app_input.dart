@@ -25,6 +25,9 @@ class AppInput extends StatelessWidget {
       numeric,
       multiline,
     );
+    final style = numeric
+        ? TextStyle(fontSize: 20, fontWeight: FontWeight.w500)
+        : TextStyle(fontSize: 16);
 
     return TextFormField(
       controller: controller,
@@ -34,6 +37,7 @@ class AppInput extends StatelessWidget {
       keyboardType: keyboardType,
       inputFormatters: inputFormatters,
       textInputAction: textInputAction,
+      style: style,
       decoration: InputDecoration(labelText: labelText),
     );
   }
