@@ -43,15 +43,15 @@ class _AddStepDialogState extends State<AddStepDialog> {
 
   void onSubmit() {
     if (_formKey.currentState?.validate() ?? false) {
-      Navigator.pop(context, {
-        'text': _textController.text,
-        'minutes': _minutesController.text.isEmpty
+      Navigator.pop(context, (
+        name: _textController.text,
+        minutes: _minutesController.text.isEmpty
             ? 0
             : int.parse(_minutesController.text),
-        'seconds': _secondsController.text.isEmpty
+        seconds: _secondsController.text.isEmpty
             ? 0
             : int.parse(_secondsController.text),
-      });
+      ));
     }
   }
 

@@ -5,10 +5,11 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_food_otus/domain/recipes_controller.dart';
 import 'package:flutter_food_otus/model/Ingredient.dart';
-import 'package:flutter_food_otus/model/recipe.dart';
+import 'package:flutter_food_otus/model/measure_unit.dart';
 import 'package:flutter_food_otus/model/recipe_step.dart';
 import 'package:flutter_food_otus/repositories/fake_recipes_repository.dart';
 import 'package:flutter_food_otus/theme/app_colors_extension.dart';
+import 'package:flutter_food_otus/typedefs.dart';
 import 'package:flutter_food_otus/ui/recipes/widgets/add_ingredient_dialog.dart';
 import 'package:flutter_food_otus/ui/recipes/widgets/add_photo_widget.dart';
 import 'package:flutter_food_otus/ui/recipes/widgets/add_step_dialog.dart';
@@ -17,10 +18,11 @@ import 'package:flutter_food_otus/ui/recipes/widgets/app_input.dart';
 import 'package:flutter_food_otus/ui/recipes/widgets/detail_card.dart';
 import 'package:flutter_food_otus/ui/recipes/widgets/details_list.dart';
 import 'package:flutter_food_otus/utils/format_duration.dart';
+import 'package:flutter_food_otus/utils/ingredient_amount_parsers.dart';
+import 'package:flutter_food_otus/utils/input_validators.dart';
 
 class RecipeFormPage extends StatefulWidget {
-  final int recipeId;
-  const RecipeFormPage({super.key, required this.recipeId});
+  const RecipeFormPage({super.key});
 
   @override
   State<RecipeFormPage> createState() => _RecipeFormPageState();
@@ -28,11 +30,11 @@ class RecipeFormPage extends StatefulWidget {
 
 class _RecipeFormPageState extends State<RecipeFormPage> {
   final _controller = RecipesController(repository: FakeRecipesRepository());
-  Recipe? recipe;
-  List<Ingredient> _ingredients = [];
+
   List<RecipeStep> _steps = [];
-  String photo = '';
-  String name = '';
+  List<IngredientView> _ingredients = [];
+  String? _recipePhoto;
+  String? _recipeName;
 
   final GlobalKey<FormState> _newRecipeFormKey = GlobalKey<FormState>();
 
@@ -40,40 +42,51 @@ class _RecipeFormPageState extends State<RecipeFormPage> {
   final TextEditingController _ingredientNameCtr = TextEditingController();
   final TextEditingController _ingredientCountCtr = TextEditingController();
 
-  Future<void> init() async {
-    recipe = await _controller.getRecipe(widget.recipeId);
-    _ingredients = await _controller.getRecipeIngredients(widget.recipeId);
-    _steps = await _controller.getRecipeSteps(widget.recipeId);
-
-    print(recipe);
-    print(_ingredients);
-    print(_steps);
-  }
-
   @override
   void initState() {
     super.initState();
-    init();
+    _nameCtr.addListener(_onNameChanged);
   }
 
   @override
   void dispose() {
+    _nameCtr.removeListener(_onNameChanged);
     _nameCtr.dispose();
     _ingredientNameCtr.dispose();
     _ingredientCountCtr.dispose();
     super.dispose();
   }
 
+  void _onNameChanged() {
+    if (mounted) {
+      setState(() {
+        _recipeName = _nameCtr.text;
+      });
+    }
+  }
+
   void onSubmit() {
-    String name = _nameCtr.text;
-    print('Сохранено: $name');
     if (_newRecipeFormKey.currentState?.validate() ?? false) {
       _newRecipeFormKey.currentState?.save();
+
+      _controller.createNewRecipe(
+        name: _recipeName!,
+        photo: _recipePhoto!,
+        ingredients: _ingredients,
+        steps: _steps,
+      );
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    final disabled =
+        _recipeName == null ||
+        _recipeName!.trim().isEmpty ||
+        _steps.isEmpty ||
+        _ingredients.isEmpty ||
+        _recipePhoto == null;
+
     return Scaffold(
       backgroundColor: context.appColors.lightSurface,
       appBar: AppBar(
@@ -96,19 +109,15 @@ class _RecipeFormPageState extends State<RecipeFormPage> {
                 AppInput(
                   labelText: "Название рецепта",
                   controller: _nameCtr,
-                  validator: (String? string) {
-                    return (string == null || string.isEmpty)
-                        ? 'Введите название рецепта'
-                        : null;
-                  },
+                  validator: validateRecipeName,
                 ),
                 SizedBox(height: 17),
                 AddPhotoWidget(
                   text: 'Добавить фото рецепта',
-                  photo: photo,
+                  photo: _recipePhoto ?? '',
                   onClick: () {
                     setState(() {
-                      photo =
+                      _recipePhoto =
                           "https://cdn.dummyjson.com/recipe-images/${Random().nextInt(50)}.webp";
                     });
                   },
@@ -116,18 +125,48 @@ class _RecipeFormPageState extends State<RecipeFormPage> {
 
                 SizedBox(height: 17),
                 DetailsList(
-                  list: [],
+                  list: _ingredients.map((ingredient) {
+                    final formattedAmount = formatIngredientAmount(
+                      count: ingredient.count,
+                      measure: (
+                        one: ingredient.measureUnit.one,
+                        few: ingredient.measureUnit.few,
+                        many: ingredient.measureUnit.many,
+                      ),
+                    );
+
+                    return DetailCard(
+                      title: ingredient.name,
+                      text: formattedAmount,
+                      onEdit: () {},
+                      onDelete: () {},
+                    );
+                  }).toList(),
                   buttonText: 'Добавить ингредиент',
                   onAdd: () async {
-                    final result = await showDialog(
+                    final input = await showDialog<IngredientInputResult>(
                       context: context,
                       builder: (context) => const AddIngredientDialog(),
                     );
 
-                    if (result != null) {
-                      final name = result['name'];
-                      final count = result['count'];
-                      print('Добавлен ингредиент: $name — $count');
+                    if (input != null) {
+                      final name = input.name;
+                      final count = input.ingredient.count;
+                      final measureData = input.ingredient.measure;
+
+                      setState(() {
+                        _ingredients.add(
+                          IngredientView(
+                            name: name,
+                            count: count,
+                            measureUnit: MeasureUnit(
+                              one: measureData.one,
+                              few: measureData.few,
+                              many: measureData.many,
+                            ),
+                          ),
+                        );
+                      });
                     }
                   },
                   title: 'Ингредиенты',
@@ -148,25 +187,24 @@ class _RecipeFormPageState extends State<RecipeFormPage> {
                   }).toList(),
                   buttonText: 'Добавить шаг',
                   onAdd: () async {
-                    final result = await showDialog(
+                    final input = await showDialog<StepInputResult>(
                       context: context,
                       builder: (context) => const AddStepDialog(),
                     );
 
-                    if (result != null) {
-                      final text = result['text'];
-                      final minutes = result['minutes'];
-                      final seconds = result['seconds'];
-
-                      final recipeStep = RecipeStep(
-                        name: text,
-                        duration: minutes * 60 + seconds,
-                      );
+                    if (input != null) {
+                      final name = input.name;
+                      final minutes = input.minutes;
+                      final seconds = input.seconds;
 
                       setState(() {
-                        _steps.add(recipeStep);
+                        _steps.add(
+                          RecipeStep(
+                            name: name,
+                            duration: minutes * 60 + seconds,
+                          ),
+                        );
                       });
-                      print('Добавлен ингредиент: $text — $minutes - $seconds');
                     }
                   },
                   title: 'Шаги приготовления',
@@ -175,6 +213,7 @@ class _RecipeFormPageState extends State<RecipeFormPage> {
                 SizedBox(height: 17),
                 AppButton(
                   text: 'Добавить ингредиент',
+                  disabled: disabled,
                   onPressed: onSubmit,
                   filled: true,
                 ),

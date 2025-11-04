@@ -1,4 +1,5 @@
-import 'package:flutter_food_otus/model/Ingredient.dart' show Ingredient;
+import 'package:flutter_food_otus/model/Ingredient.dart'
+    show Ingredient, IngredientView;
 import 'package:flutter_food_otus/model/recipe.dart';
 import 'package:flutter_food_otus/domain/repository.dart';
 import 'package:flutter_food_otus/model/recipe_step.dart';
@@ -23,5 +24,17 @@ class RecipesController {
 
   Future<List<Ingredient>> getRecipeIngredients(int recipeId) {
     return _repository.fetchIngredientsById(recipeId);
+  }
+
+  Future<void> createNewRecipe({
+    required String name,
+    required String photo,
+    required List<IngredientView> ingredients,
+    required List<RecipeStep> steps,
+  }) async {
+    print('(**) => name:  ${name}');
+    print('(**) => photo:  ${photo}');
+    print('(**) => ingredients:  ${ingredients}');
+    print('(**) => steps:  ${steps}');
   }
 }

@@ -1,3 +1,5 @@
+import 'package:flutter_food_otus/model/measure_unit.dart';
+
 class Ingredient {
   final int? id;
   final String name;
@@ -35,5 +37,22 @@ class Ingredient {
   @override
   String toString() {
     return "$name - $measureString";
+  }
+}
+
+class IngredientView {
+  final String name;
+  final int count;
+  final MeasureUnit measureUnit;
+
+  IngredientView({
+    required this.name,
+    required this.count,
+    required this.measureUnit,
+  });
+
+  @override
+  String toString() {
+    return "IngredientView: $name - $count - $measureUnit";
   }
 }

@@ -1,5 +1,6 @@
-({int count, ({String one, String few, String many}) measure})
-parseIngredientAmount(String input) {
+import 'package:flutter_food_otus/typedefs.dart';
+
+IngredientResult parseIngredientAmount(String input) {
   final trimmed = input.trim();
   final match = RegExp(r'^(\d+)\s+(.+)$').firstMatch(trimmed);
 

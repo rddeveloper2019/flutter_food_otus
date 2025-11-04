@@ -40,15 +40,10 @@ class _AddIngredientDialogState extends State<AddIngredientDialog> {
 
   void onSubmit() {
     if (_formKey.currentState?.validate() ?? false) {
-      final (count: count, measure: measure) = parseIngredientAmount(
-        _countController.text,
-      );
-
-      Navigator.pop(context, {
-        'name': _nameController.text,
-        'count': count,
-        'measure': measure,
-      });
+      Navigator.pop(context, (
+        name: _nameController.text,
+        ingredient: parseIngredientAmount(_countController.text),
+      ));
     }
   }
 
@@ -56,9 +51,7 @@ class _AddIngredientDialogState extends State<AddIngredientDialog> {
   Widget build(BuildContext context) {
     return Dialog(
       insetPadding: const EdgeInsets.symmetric(horizontal: 16),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(5), // ← убирает скругление
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
       child: Padding(
         padding: const EdgeInsets.only(
           top: 18,

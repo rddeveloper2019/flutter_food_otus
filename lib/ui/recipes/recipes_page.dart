@@ -18,12 +18,9 @@ class RecipesPage extends StatelessWidget {
       appBar: AppBar(title: const Text('Otus Food')),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (context) =>
-                  RecipeFormPage(recipeId: Random().nextInt(15)),
-            ),
-          );
+          Navigator.of(
+            context,
+          ).push(MaterialPageRoute(builder: (context) => RecipeFormPage()));
         },
         child: Icon(Icons.add),
       ),

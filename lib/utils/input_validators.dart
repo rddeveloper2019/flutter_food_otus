@@ -32,3 +32,7 @@ String? validateNumber(String? value, {bool isSeconds = false}) {
   }
   return null;
 }
+
+String? validateRecipeName(String? string) {
+  return (string == null || string.isEmpty) ? 'Введите название рецепта' : null;
+}
