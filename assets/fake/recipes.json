@@ -19,7 +19,7 @@
     },
     {
         "id": 4,
-        "name": "Гречневая каша с грибами",
+        "name": "Куриная карта с грибами",
         "duration": 35,
         "photo": "https://cdn.dummyjson.com/recipe-images/4.webp"
     },
@@ -31,13 +31,13 @@
     },
     {
         "id": 6,
-        "name": "Блины на молоке",
+        "name": "Олинь на молоке",
         "duration": 30,
         "photo": "https://cdn.dummyjson.com/recipe-images/6.webp"
     },
     {
         "id": 7,
-        "name": "Котлеты по-киевски",
+        "name": "Борщ по-киевски",
         "duration": 60,
         "photo": "https://cdn.dummyjson.com/recipe-images/7.webp"
     },
@@ -49,7 +49,7 @@
     },
     {
         "id": 9,
-        "name": "Манник на кефире",
+        "name": "Банник на кефире",
         "duration": 45,
         "photo": "https://cdn.dummyjson.com/recipe-images/9.webp"
     },
@@ -67,116 +67,8 @@
     },
     {
         "id": 12,
-        "name": "Запечённая рыба с лимоном",
+        "name": "Капуста запеченная с лимоном",
         "duration": 35,
         "photo": "https://cdn.dummyjson.com/recipe-images/12.webp"
-    },
-    {
-        "id": 13,
-        "name": "Картофель по-деревенски",
-        "duration": 40,
-        "photo": "https://cdn.dummyjson.com/recipe-images/13.webp"
-    },
-    {
-        "id": 14,
-        "name": "Тушеная капуста с яблоками",
-        "duration": 30,
-        "photo": "https://cdn.dummyjson.com/recipe-images/14.webp"
-    },
-    {
-        "id": 15,
-        "name": "Курица в сливочном соусе",
-        "duration": 50,
-        "photo": "https://cdn.dummyjson.com/recipe-images/15.webp"
-    },
-    {
-        "id": 16,
-        "name": "Рис с овощами",
-        "duration": 25,
-        "photo": "https://cdn.dummyjson.com/recipe-images/16.webp"
-    },
-    {
-        "id": 17,
-        "name": "Омлет с сыром и зеленью",
-        "duration": 15,
-        "photo": "https://cdn.dummyjson.com/recipe-images/17.webp"
-    },
-    {
-        "id": 18,
-        "name": "Салат с креветками и авокадо",
-        "duration": 20,
-        "photo": "https://cdn.dummyjson.com/recipe-images/18.webp"
-    },
-    {
-        "id": 19,
-        "name": "Томатный суп с гренками",
-        "duration": 30,
-        "photo": "https://cdn.dummyjson.com/recipe-images/19.webp"
-    },
-    {
-        "id": 20,
-        "name": "Паста с базиликом и пармезаном",
-        "duration": 20,
-        "photo": "https://cdn.dummyjson.com/recipe-images/20.webp"
-    },
-    {
-        "id": 21,
-        "name": "Фаршированные перцы",
-        "duration": 70,
-        "photo": "https://cdn.dummyjson.com/recipe-images/21.webp"
-    },
-    {
-        "id": 22,
-        "name": "Сырники со сметаной",
-        "duration": 25,
-        "photo": "https://cdn.dummyjson.com/recipe-images/22.webp"
-    },
-    {
-        "id": 23,
-        "name": "Куриные наггетсы в духовке",
-        "duration": 35,
-        "photo": "https://cdn.dummyjson.com/recipe-images/23.webp"
-    },
-    {
-        "id": 24,
-        "name": "Свекольник холодный",
-        "duration": 20,
-        "photo": "https://cdn.dummyjson.com/recipe-images/24.webp"
-    },
-    {
-        "id": 25,
-        "name": "Греческий салат",
-        "duration": 15,
-        "photo": "https://cdn.dummyjson.com/recipe-images/25.webp"
-    },
-    {
-        "id": 26,
-        "name": "Плов с курицей",
-        "duration": 60,
-        "photo": "https://cdn.dummyjson.com/recipe-images/26.webp"
-    },
-    {
-        "id": 27,
-        "name": "Лазанья мясная",
-        "duration": 90,
-        "photo": "https://cdn.dummyjson.com/recipe-images/27.webp"
-    },
-    {
-        "id": 28,
-        "name": "Овощное рагу",
-        "duration": 45,
-        "photo": "https://cdn.dummyjson.com/recipe-images/28.webp"
-    },
-    {
-        "id": 29,
-        "name": "Творожная запеканка",
-        "duration": 50,
-        "photo": "https://cdn.dummyjson.com/recipe-images/29.webp"
-    },
-    {
-        "id": 30,
-        "name": "Курица в горчице с мёдом",
-        "duration": 55,
-        "photo": "https://cdn.dummyjson.com/recipe-images/30.webp"
     }
 ]

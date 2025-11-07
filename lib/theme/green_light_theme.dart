@@ -24,7 +24,11 @@ class GreenTheme {
     colorScheme: ColorScheme.fromSwatch(primarySwatch: primarySwatch),
     appBarTheme: AppBarTheme(
       backgroundColor: GreenLightThemeSurfaceColors.accentColor,
-      foregroundColor: Colors.white,
+      foregroundColor: GreenLightThemeSurfaceColors.lightSurface,
+      iconTheme: IconThemeData(
+        color: GreenLightThemeSurfaceColors.lightSurface,
+      ),
+      centerTitle: true,
     ),
     floatingActionButtonTheme: FloatingActionButtonThemeData(
       shape: const CircleBorder(),
@@ -33,6 +37,37 @@ class GreenTheme {
     ),
     scaffoldBackgroundColor: GreenLightThemeSurfaceColors.secondaryColor,
     cardTheme: CardThemeData(color: GreenLightThemeSurfaceColors.lightSurface),
+    inputDecorationTheme: InputDecorationThemeData(
+      floatingLabelBehavior: FloatingLabelBehavior.always,
+      isDense: true,
+      contentPadding: EdgeInsets.only(top: 8, left: 8, right: 8, bottom: 5),
+      filled: true,
+      fillColor: GreenLightThemeSurfaceColors.secondaryColor,
+      labelStyle: TextStyle(
+        color: GreenLightThemeTypographyColors.mainTextColor,
+      ),
+      floatingLabelStyle: TextStyle(
+        color: GreenLightThemeTypographyColors.mainTextColor,
+      ),
+      border: UnderlineInputBorder(
+        borderSide: BorderSide(
+          width: 2,
+          color: GreenLightThemeSurfaceColors.mainColor,
+        ),
+      ),
+      enabledBorder: UnderlineInputBorder(
+        borderSide: BorderSide(
+          width: 2,
+          color: GreenLightThemeSurfaceColors.mainColor,
+        ),
+      ),
+      focusedBorder: UnderlineInputBorder(
+        borderSide: BorderSide(
+          width: 2,
+          color: GreenLightThemeSurfaceColors.mainColor,
+        ),
+      ),
+    ),
     extensions: <ThemeExtension<dynamic>>[
       AppColorsExtension(
         mainColor: GreenLightThemeSurfaceColors.mainColor,

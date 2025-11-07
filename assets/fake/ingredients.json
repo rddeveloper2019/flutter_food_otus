@@ -1,0 +1,398 @@
+[
+    {
+        "id": 1,
+        "name": "Свёкла",
+        "caloriesForUnit": 43,
+        "measureUnit": {
+            "id": 1
+        },
+        "measureSimpleUnit": {
+            "id": 1
+        }
+    },
+    {
+        "id": 2,
+        "name": "Капуста",
+        "caloriesForUnit": 25,
+        "measureUnit": {
+            "id": 1
+        },
+        "measureSimpleUnit": {
+            "id": 3
+        }
+    },
+    {
+        "id": 3,
+        "name": "Морковь",
+        "caloriesForUnit": 41,
+        "measureUnit": {
+            "id": 1
+        },
+        "measureSimpleUnit": {
+            "id": 4
+        }
+    },
+    {
+        "id": 4,
+        "name": "Картофель",
+        "caloriesForUnit": 77,
+        "measureUnit": {
+            "id": 1
+        },
+        "measureSimpleUnit": {
+            "id": 2
+        }
+    },
+    {
+        "id": 5,
+        "name": "Лук",
+        "caloriesForUnit": 40,
+        "measureUnit": {
+            "id": 1
+        },
+        "measureSimpleUnit": {
+            "id": 3
+        }
+    },
+    {
+        "id": 6,
+        "name": "Говядина",
+        "caloriesForUnit": 250,
+        "measureUnit": {
+            "id": 2
+        },
+        "measureSimpleUnit": {
+            "id": 19
+        }
+    },
+    {
+        "id": 7,
+        "name": "Курица",
+        "caloriesForUnit": 165,
+        "measureUnit": {
+            "id": 2
+        },
+        "measureSimpleUnit": {
+            "id": 20
+        }
+    },
+    {
+        "id": 8,
+        "name": "Яйцо",
+        "caloriesForUnit": 70,
+        "measureUnit": {
+            "id": 3
+        },
+        "measureSimpleUnit": {
+            "id": 6
+        }
+    },
+    {
+        "id": 9,
+        "name": "Майонез",
+        "caloriesForUnit": 680,
+        "measureUnit": {
+            "id": 4
+        },
+        "measureSimpleUnit": {
+            "id": 12
+        }
+    },
+    {
+        "id": 10,
+        "name": "Огурец",
+        "caloriesForUnit": 15,
+        "measureUnit": {
+            "id": 1
+        },
+        "measureSimpleUnit": {
+            "id": 3
+        }
+    },
+    {
+        "id": 11,
+        "name": "Горошек консервированный",
+        "caloriesForUnit": 80,
+        "measureUnit": {
+            "id": 4
+        },
+        "measureSimpleUnit": {
+            "id": 5
+        }
+    },
+    {
+        "id": 12,
+        "name": "Картофельное пюре",
+        "caloriesForUnit": 120,
+        "measureUnit": {
+            "id": 4
+        },
+        "measureSimpleUnit": {
+            "id": 5
+        }
+    },
+    {
+        "id": 13,
+        "name": "Пельмени",
+        "caloriesForUnit": 280,
+        "measureUnit": {
+            "id": 2
+        },
+        "measureSimpleUnit": {
+            "id": 19
+        }
+    },
+    {
+        "id": 14,
+        "name": "Грибы",
+        "caloriesForUnit": 22,
+        "measureUnit": {
+            "id": 1
+        },
+        "measureSimpleUnit": {
+            "id": 4
+        }
+    },
+    {
+        "id": 15,
+        "name": "Сыр пармезан",
+        "caloriesForUnit": 420,
+        "measureUnit": {
+            "id": 1
+        },
+        "measureSimpleUnit": {
+            "id": 5
+        }
+    },
+    {
+        "id": 16,
+        "name": "Листья салата",
+        "caloriesForUnit": 14,
+        "measureUnit": {
+            "id": 1
+        },
+        "measureSimpleUnit": {
+            "id": 5
+        }
+    },
+    {
+        "id": 17,
+        "name": "Креветки",
+        "caloriesForUnit": 99,
+        "measureUnit": {
+            "id": 2
+        },
+        "measureSimpleUnit": {
+            "id": 5
+        }
+    },
+    {
+        "id": 18,
+        "name": "Авокадо",
+        "caloriesForUnit": 160,
+        "measureUnit": {
+            "id": 1
+        },
+        "measureSimpleUnit": {
+            "id": 7
+        }
+    },
+    {
+        "id": 19,
+        "name": "Чеснок",
+        "caloriesForUnit": 149,
+        "measureUnit": {
+            "id": 3
+        },
+        "measureSimpleUnit": {
+            "id": 8
+        }
+    },
+    {
+        "id": 20,
+        "name": "Брокколи",
+        "caloriesForUnit": 34,
+        "measureUnit": {
+            "id": 1
+        },
+        "measureSimpleUnit": {
+            "id": 3
+        }
+    },
+    {
+        "id": 21,
+        "name": "Сливки",
+        "caloriesForUnit": 340,
+        "measureUnit": {
+            "id": 4
+        },
+        "measureSimpleUnit": {
+            "id": 12
+        }
+    },
+    {
+        "id": 22,
+        "name": "Лимон",
+        "caloriesForUnit": 29,
+        "measureUnit": {
+            "id": 3
+        },
+        "measureSimpleUnit": {
+            "id": 8
+        }
+    },
+    {
+        "id": 23,
+        "name": "Базилик",
+        "caloriesForUnit": 23,
+        "measureUnit": {
+            "id": 1
+        },
+        "measureSimpleUnit": {
+            "id": 14
+        }
+    },
+    {
+        "id": 24,
+        "name": "Паста",
+        "caloriesForUnit": 350,
+        "measureUnit": {
+            "id": 1
+        },
+        "measureSimpleUnit": {
+            "id": 2
+        }
+    },
+    {
+        "id": 25,
+        "name": "Помидор",
+        "caloriesForUnit": 18,
+        "measureUnit": {
+            "id": 1
+        },
+        "measureSimpleUnit": {
+            "id": 3
+        }
+    },
+    {
+        "id": 26,
+        "name": "Рис",
+        "caloriesForUnit": 130,
+        "measureUnit": {
+            "id": 1
+        },
+        "measureSimpleUnit": {
+            "id": 2
+        }
+    },
+    {
+        "id": 27,
+        "name": "Кефир",
+        "caloriesForUnit": 45,
+        "measureUnit": {
+            "id": 4
+        },
+        "measureSimpleUnit": {
+            "id": 17
+        }
+    },
+    {
+        "id": 28,
+        "name": "Творог",
+        "caloriesForUnit": 150,
+        "measureUnit": {
+            "id": 4
+        },
+        "measureSimpleUnit": {
+            "id": 5
+        }
+    },
+    {
+        "id": 29,
+        "name": "Перец болгарский",
+        "caloriesForUnit": 30,
+        "measureUnit": {
+            "id": 1
+        },
+        "measureSimpleUnit": {
+            "id": 7
+        }
+    },
+    {
+        "id": 30,
+        "name": "Кукуруза",
+        "caloriesForUnit": 86,
+        "measureUnit": {
+            "id": 1
+        },
+        "measureSimpleUnit": {
+            "id": 5
+        }
+    },
+    {
+        "id": 31,
+        "name": "Молоко",
+        "caloriesForUnit": 42,
+        "measureUnit": {
+            "id": 4
+        },
+        "measureSimpleUnit": {
+            "id": 12
+        }
+    },
+    {
+        "id": 32,
+        "name": "Масло сливочное",
+        "caloriesForUnit": 717,
+        "measureUnit": {
+            "id": 1
+        },
+        "measureSimpleUnit": {
+            "id": 11
+        }
+    },
+    {
+        "id": 33,
+        "name": "Сметана",
+        "caloriesForUnit": 206,
+        "measureUnit": {
+            "id": 4
+        },
+        "measureSimpleUnit": {
+            "id": 12
+        }
+    },
+    {
+        "id": 34,
+        "name": "Горчица",
+        "caloriesForUnit": 66,
+        "measureUnit": {
+            "id": 4
+        },
+        "measureSimpleUnit": {
+            "id": 10
+        }
+    },
+    {
+        "id": 35,
+        "name": "Свекла (для свекольника)",
+        "caloriesForUnit": 43,
+        "measureUnit": {
+            "id": 1
+        },
+        "measureSimpleUnit": {
+            "id": 2
+        }
+    },
+    {
+        "id": 36,
+        "name": "Сахар",
+        "caloriesForUnit": 49,
+        "measureUnit": {
+            "id": 5
+        },
+        "measureSimpleUnit": {
+            "id": 21
+        }
+    }
+]

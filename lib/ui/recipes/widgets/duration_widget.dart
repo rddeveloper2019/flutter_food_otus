@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_food_otus/theme/app_colors_extension.dart';
-import 'package:flutter_food_otus/theme/app_colors.dart';
 
 class DurationWidget extends StatelessWidget {
   final int duration;
