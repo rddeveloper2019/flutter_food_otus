@@ -1,0 +1,1948 @@
+{
+    "recipes": [
+        {
+            "id": 1,
+            "name": "Борщ",
+            "duration": 90,
+            "photo": "https://cdn.dummyjson.com/recipe-images/1.webp"
+        },
+        {
+            "id": 2,
+            "name": "Оливье",
+            "duration": 40,
+            "photo": "https://cdn.dummyjson.com/recipe-images/2.webp"
+        },
+        {
+            "id": 3,
+            "name": "Пельмени домашние",
+            "duration": 120,
+            "photo": "https://cdn.dummyjson.com/recipe-images/3.webp"
+        },
+        {
+            "id": 4,
+            "name": "Куриная карта с грибами",
+            "duration": 35,
+            "photo": "https://cdn.dummyjson.com/recipe-images/4.webp"
+        },
+        {
+            "id": 5,
+            "name": "Салат Цезарь",
+            "duration": 20,
+            "photo": "https://cdn.dummyjson.com/recipe-images/5.webp"
+        },
+        {
+            "id": 6,
+            "name": "Олинь на молоке",
+            "duration": 30,
+            "photo": "https://cdn.dummyjson.com/recipe-images/6.webp"
+        },
+        {
+            "id": 7,
+            "name": "Борщ по-киевски",
+            "duration": 60,
+            "photo": "https://cdn.dummyjson.com/recipe-images/7.webp"
+        },
+        {
+            "id": 8,
+            "name": "Щи из свежей капусты",
+            "duration": 50,
+            "photo": "https://cdn.dummyjson.com/recipe-images/8.webp"
+        },
+        {
+            "id": 9,
+            "name": "Банник на кефире",
+            "duration": 45,
+            "photo": "https://cdn.dummyjson.com/recipe-images/9.webp"
+        },
+        {
+            "id": 10,
+            "name": "Харчо",
+            "duration": 80,
+            "photo": "https://cdn.dummyjson.com/recipe-images/10.webp"
+        },
+        {
+            "id": 11,
+            "name": "Суп-пюре из брокколи",
+            "duration": 25,
+            "photo": "https://cdn.dummyjson.com/recipe-images/11.webp"
+        },
+        {
+            "id": 12,
+            "name": "Капуста запеченная с лимоном",
+            "duration": 35,
+            "photo": "https://cdn.dummyjson.com/recipe-images/12.webp"
+        }
+    ],
+    "ingredients": [
+        {
+            "id": 1,
+            "name": "Свёкла",
+            "caloriesForUnit": 43,
+            "measureUnit": {
+                "id": 1
+            },
+            "measureSimpleUnit": {
+                "id": 1
+            }
+        },
+        {
+            "id": 2,
+            "name": "Капуста",
+            "caloriesForUnit": 25,
+            "measureUnit": {
+                "id": 1
+            },
+            "measureSimpleUnit": {
+                "id": 3
+            }
+        },
+        {
+            "id": 3,
+            "name": "Морковь",
+            "caloriesForUnit": 41,
+            "measureUnit": {
+                "id": 1
+            },
+            "measureSimpleUnit": {
+                "id": 4
+            }
+        },
+        {
+            "id": 4,
+            "name": "Картофель",
+            "caloriesForUnit": 77,
+            "measureUnit": {
+                "id": 1
+            },
+            "measureSimpleUnit": {
+                "id": 2
+            }
+        },
+        {
+            "id": 5,
+            "name": "Лук",
+            "caloriesForUnit": 40,
+            "measureUnit": {
+                "id": 1
+            },
+            "measureSimpleUnit": {
+                "id": 3
+            }
+        },
+        {
+            "id": 6,
+            "name": "Говядина",
+            "caloriesForUnit": 250,
+            "measureUnit": {
+                "id": 2
+            },
+            "measureSimpleUnit": {
+                "id": 19
+            }
+        },
+        {
+            "id": 7,
+            "name": "Курица",
+            "caloriesForUnit": 165,
+            "measureUnit": {
+                "id": 2
+            },
+            "measureSimpleUnit": {
+                "id": 20
+            }
+        },
+        {
+            "id": 8,
+            "name": "Яйцо",
+            "caloriesForUnit": 70,
+            "measureUnit": {
+                "id": 3
+            },
+            "measureSimpleUnit": {
+                "id": 6
+            }
+        },
+        {
+            "id": 9,
+            "name": "Майонез",
+            "caloriesForUnit": 680,
+            "measureUnit": {
+                "id": 4
+            },
+            "measureSimpleUnit": {
+                "id": 12
+            }
+        },
+        {
+            "id": 10,
+            "name": "Огурец",
+            "caloriesForUnit": 15,
+            "measureUnit": {
+                "id": 1
+            },
+            "measureSimpleUnit": {
+                "id": 3
+            }
+        },
+        {
+            "id": 11,
+            "name": "Горошек консервированный",
+            "caloriesForUnit": 80,
+            "measureUnit": {
+                "id": 4
+            },
+            "measureSimpleUnit": {
+                "id": 5
+            }
+        },
+        {
+            "id": 12,
+            "name": "Картофельное пюре",
+            "caloriesForUnit": 120,
+            "measureUnit": {
+                "id": 4
+            },
+            "measureSimpleUnit": {
+                "id": 5
+            }
+        },
+        {
+            "id": 13,
+            "name": "Пельмени",
+            "caloriesForUnit": 280,
+            "measureUnit": {
+                "id": 2
+            },
+            "measureSimpleUnit": {
+                "id": 19
+            }
+        },
+        {
+            "id": 14,
+            "name": "Грибы",
+            "caloriesForUnit": 22,
+            "measureUnit": {
+                "id": 1
+            },
+            "measureSimpleUnit": {
+                "id": 4
+            }
+        },
+        {
+            "id": 15,
+            "name": "Сыр пармезан",
+            "caloriesForUnit": 420,
+            "measureUnit": {
+                "id": 1
+            },
+            "measureSimpleUnit": {
+                "id": 5
+            }
+        },
+        {
+            "id": 16,
+            "name": "Листья салата",
+            "caloriesForUnit": 14,
+            "measureUnit": {
+                "id": 1
+            },
+            "measureSimpleUnit": {
+                "id": 5
+            }
+        },
+        {
+            "id": 17,
+            "name": "Креветки",
+            "caloriesForUnit": 99,
+            "measureUnit": {
+                "id": 2
+            },
+            "measureSimpleUnit": {
+                "id": 5
+            }
+        },
+        {
+            "id": 18,
+            "name": "Авокадо",
+            "caloriesForUnit": 160,
+            "measureUnit": {
+                "id": 1
+            },
+            "measureSimpleUnit": {
+                "id": 7
+            }
+        },
+        {
+            "id": 19,
+            "name": "Чеснок",
+            "caloriesForUnit": 149,
+            "measureUnit": {
+                "id": 3
+            },
+            "measureSimpleUnit": {
+                "id": 8
+            }
+        },
+        {
+            "id": 20,
+            "name": "Брокколи",
+            "caloriesForUnit": 34,
+            "measureUnit": {
+                "id": 1
+            },
+            "measureSimpleUnit": {
+                "id": 3
+            }
+        },
+        {
+            "id": 21,
+            "name": "Сливки",
+            "caloriesForUnit": 340,
+            "measureUnit": {
+                "id": 4
+            },
+            "measureSimpleUnit": {
+                "id": 12
+            }
+        },
+        {
+            "id": 22,
+            "name": "Лимон",
+            "caloriesForUnit": 29,
+            "measureUnit": {
+                "id": 3
+            },
+            "measureSimpleUnit": {
+                "id": 8
+            }
+        },
+        {
+            "id": 23,
+            "name": "Базилик",
+            "caloriesForUnit": 23,
+            "measureUnit": {
+                "id": 1
+            },
+            "measureSimpleUnit": {
+                "id": 14
+            }
+        },
+        {
+            "id": 24,
+            "name": "Паста",
+            "caloriesForUnit": 350,
+            "measureUnit": {
+                "id": 1
+            },
+            "measureSimpleUnit": {
+                "id": 2
+            }
+        },
+        {
+            "id": 25,
+            "name": "Помидор",
+            "caloriesForUnit": 18,
+            "measureUnit": {
+                "id": 1
+            },
+            "measureSimpleUnit": {
+                "id": 3
+            }
+        },
+        {
+            "id": 26,
+            "name": "Рис",
+            "caloriesForUnit": 130,
+            "measureUnit": {
+                "id": 1
+            },
+            "measureSimpleUnit": {
+                "id": 2
+            }
+        },
+        {
+            "id": 27,
+            "name": "Кефир",
+            "caloriesForUnit": 45,
+            "measureUnit": {
+                "id": 4
+            },
+            "measureSimpleUnit": {
+                "id": 17
+            }
+        },
+        {
+            "id": 28,
+            "name": "Творог",
+            "caloriesForUnit": 150,
+            "measureUnit": {
+                "id": 4
+            },
+            "measureSimpleUnit": {
+                "id": 5
+            }
+        },
+        {
+            "id": 29,
+            "name": "Перец болгарский",
+            "caloriesForUnit": 30,
+            "measureUnit": {
+                "id": 1
+            },
+            "measureSimpleUnit": {
+                "id": 7
+            }
+        },
+        {
+            "id": 30,
+            "name": "Кукуруза",
+            "caloriesForUnit": 86,
+            "measureUnit": {
+                "id": 1
+            },
+            "measureSimpleUnit": {
+                "id": 5
+            }
+        },
+        {
+            "id": 31,
+            "name": "Молоко",
+            "caloriesForUnit": 42,
+            "measureUnit": {
+                "id": 4
+            },
+            "measureSimpleUnit": {
+                "id": 12
+            }
+        },
+        {
+            "id": 32,
+            "name": "Масло сливочное",
+            "caloriesForUnit": 717,
+            "measureUnit": {
+                "id": 1
+            },
+            "measureSimpleUnit": {
+                "id": 11
+            }
+        },
+        {
+            "id": 33,
+            "name": "Сметана",
+            "caloriesForUnit": 206,
+            "measureUnit": {
+                "id": 4
+            },
+            "measureSimpleUnit": {
+                "id": 12
+            }
+        },
+        {
+            "id": 34,
+            "name": "Горчица",
+            "caloriesForUnit": 66,
+            "measureUnit": {
+                "id": 4
+            },
+            "measureSimpleUnit": {
+                "id": 10
+            }
+        },
+        {
+            "id": 35,
+            "name": "Свекла (для свекольника)",
+            "caloriesForUnit": 43,
+            "measureUnit": {
+                "id": 1
+            },
+            "measureSimpleUnit": {
+                "id": 2
+            }
+        },
+        {
+            "id": 36,
+            "name": "Сахар",
+            "caloriesForUnit": 49,
+            "measureUnit": {
+                "id": 5
+            },
+            "measureSimpleUnit": {
+                "id": 21
+            }
+        }
+    ],
+    "recipe_ingredients_link": [
+        {
+            "id": 1,
+            "count": 500,
+            "ingredient": {
+                "id": 1
+            },
+            "recipe": {
+                "id": 1
+            }
+        },
+        {
+            "id": 2,
+            "count": 300,
+            "ingredient": {
+                "id": 2
+            },
+            "recipe": {
+                "id": 1
+            }
+        },
+        {
+            "id": 3,
+            "count": 200,
+            "ingredient": {
+                "id": 4
+            },
+            "recipe": {
+                "id": 1
+            }
+        },
+        {
+            "id": 4,
+            "count": 3,
+            "ingredient": {
+                "id": 8
+            },
+            "recipe": {
+                "id": 2
+            }
+        },
+        {
+            "id": 5,
+            "count": 200,
+            "ingredient": {
+                "id": 10
+            },
+            "recipe": {
+                "id": 2
+            }
+        },
+        {
+            "id": 6,
+            "count": 150,
+            "ingredient": {
+                "id": 11
+            },
+            "recipe": {
+                "id": 2
+            }
+        },
+        {
+            "id": 7,
+            "count": 100,
+            "ingredient": {
+                "id": 9
+            },
+            "recipe": {
+                "id": 2
+            }
+        },
+        {
+            "id": 8,
+            "count": 400,
+            "ingredient": {
+                "id": 13
+            },
+            "recipe": {
+                "id": 3
+            }
+        },
+        {
+            "id": 9,
+            "count": 250,
+            "ingredient": {
+                "id": 7
+            },
+            "recipe": {
+                "id": 4
+            }
+        },
+        {
+            "id": 10,
+            "count": 150,
+            "ingredient": {
+                "id": 14
+            },
+            "recipe": {
+                "id": 4
+            }
+        },
+        {
+            "id": 11,
+            "count": 2,
+            "ingredient": {
+                "id": 8
+            },
+            "recipe": {
+                "id": 5
+            }
+        },
+        {
+            "id": 12,
+            "count": 100,
+            "ingredient": {
+                "id": 16
+            },
+            "recipe": {
+                "id": 5
+            }
+        },
+        {
+            "id": 13,
+            "count": 50,
+            "ingredient": {
+                "id": 15
+            },
+            "recipe": {
+                "id": 5
+            }
+        },
+        {
+            "id": 14,
+            "count": 200,
+            "ingredient": {
+                "id": 31
+            },
+            "recipe": {
+                "id": 6
+            }
+        },
+        {
+            "id": 15,
+            "count": 300,
+            "ingredient": {
+                "id": 1
+            },
+            "recipe": {
+                "id": 7
+            }
+        },
+        {
+            "id": 16,
+            "count": 200,
+            "ingredient": {
+                "id": 2
+            },
+            "recipe": {
+                "id": 8
+            }
+        },
+        {
+            "id": 17,
+            "count": 250,
+            "ingredient": {
+                "id": 27
+            },
+            "recipe": {
+                "id": 9
+            }
+        },
+        {
+            "id": 18,
+            "count": 300,
+            "ingredient": {
+                "id": 6
+            },
+            "recipe": {
+                "id": 10
+            }
+        },
+        {
+            "id": 19,
+            "count": 200,
+            "ingredient": {
+                "id": 20
+            },
+            "recipe": {
+                "id": 11
+            }
+        },
+        {
+            "id": 20,
+            "count": 100,
+            "ingredient": {
+                "id": 21
+            },
+            "recipe": {
+                "id": 11
+            }
+        },
+        {
+            "id": 21,
+            "count": 150,
+            "ingredient": {
+                "id": 2
+            },
+            "recipe": {
+                "id": 12
+            }
+        },
+        {
+            "id": 22,
+            "count": 1,
+            "ingredient": {
+                "id": 22
+            },
+            "recipe": {
+                "id": 12
+            }
+        },
+        {
+            "id": 23,
+            "count": 300,
+            "ingredient": {
+                "id": 4
+            },
+            "recipe": {
+                "id": 13
+            }
+        },
+        {
+            "id": 24,
+            "count": 200,
+            "ingredient": {
+                "id": 2
+            },
+            "recipe": {
+                "id": 14
+            }
+        },
+        {
+            "id": 25,
+            "count": 200,
+            "ingredient": {
+                "id": 29
+            },
+            "recipe": {
+                "id": 14
+            }
+        },
+        {
+            "id": 26,
+            "count": 200,
+            "ingredient": {
+                "id": 24
+            },
+            "recipe": {
+                "id": 15
+            }
+        },
+        {
+            "id": 27,
+            "count": 50,
+            "ingredient": {
+                "id": 23
+            },
+            "recipe": {
+                "id": 15
+            }
+        },
+        {
+            "id": 28,
+            "count": 30,
+            "ingredient": {
+                "id": 32
+            },
+            "recipe": {
+                "id": 15
+            }
+        },
+        {
+            "id": 29,
+            "count": 150,
+            "ingredient": {
+                "id": 26
+            },
+            "recipe": {
+                "id": 16
+            }
+        },
+        {
+            "id": 30,
+            "count": 100,
+            "ingredient": {
+                "id": 25
+            },
+            "recipe": {
+                "id": 16
+            }
+        },
+        {
+            "id": 31,
+            "count": 3,
+            "ingredient": {
+                "id": 8
+            },
+            "recipe": {
+                "id": 17
+            }
+        },
+        {
+            "id": 32,
+            "count": 100,
+            "ingredient": {
+                "id": 25
+            },
+            "recipe": {
+                "id": 17
+            }
+        },
+        {
+            "id": 33,
+            "count": 200,
+            "ingredient": {
+                "id": 17
+            },
+            "recipe": {
+                "id": 18
+            }
+        },
+        {
+            "id": 34,
+            "count": 150,
+            "ingredient": {
+                "id": 18
+            },
+            "recipe": {
+                "id": 18
+            }
+        },
+        {
+            "id": 35,
+            "count": 300,
+            "ingredient": {
+                "id": 25
+            },
+            "recipe": {
+                "id": 19
+            }
+        },
+        {
+            "id": 36,
+            "count": 50,
+            "ingredient": {
+                "id": 32
+            },
+            "recipe": {
+                "id": 19
+            }
+        },
+        {
+            "id": 37,
+            "count": 200,
+            "ingredient": {
+                "id": 24
+            },
+            "recipe": {
+                "id": 20
+            }
+        },
+        {
+            "id": 38,
+            "count": 60,
+            "ingredient": {
+                "id": 23
+            },
+            "recipe": {
+                "id": 20
+            }
+        },
+        {
+            "id": 39,
+            "count": 40,
+            "ingredient": {
+                "id": 15
+            },
+            "recipe": {
+                "id": 20
+            }
+        },
+        {
+            "id": 40,
+            "count": 6,
+            "ingredient": {
+                "id": 29
+            },
+            "recipe": {
+                "id": 21
+            }
+        },
+        {
+            "id": 41,
+            "count": 300,
+            "ingredient": {
+                "id": 7
+            },
+            "recipe": {
+                "id": 21
+            }
+        },
+        {
+            "id": 42,
+            "count": 300,
+            "ingredient": {
+                "id": 28
+            },
+            "recipe": {
+                "id": 22
+            }
+        },
+        {
+            "id": 43,
+            "count": 100,
+            "ingredient": {
+                "id": 33
+            },
+            "recipe": {
+                "id": 22
+            }
+        },
+        {
+            "id": 44,
+            "count": 400,
+            "ingredient": {
+                "id": 7
+            },
+            "recipe": {
+                "id": 23
+            }
+        },
+        {
+            "id": 45,
+            "count": 300,
+            "ingredient": {
+                "id": 2
+            },
+            "recipe": {
+                "id": 24
+            }
+        },
+        {
+            "id": 46,
+            "count": 200,
+            "ingredient": {
+                "id": 35
+            },
+            "recipe": {
+                "id": 24
+            }
+        },
+        {
+            "id": 47,
+            "count": 150,
+            "ingredient": {
+                "id": 10
+            },
+            "recipe": {
+                "id": 25
+            }
+        },
+        {
+            "id": 48,
+            "count": 100,
+            "ingredient": {
+                "id": 29
+            },
+            "recipe": {
+                "id": 25
+            }
+        },
+        {
+            "id": 49,
+            "count": 500,
+            "ingredient": {
+                "id": 7
+            },
+            "recipe": {
+                "id": 26
+            }
+        },
+        {
+            "id": 50,
+            "count": 300,
+            "ingredient": {
+                "id": 26
+            },
+            "recipe": {
+                "id": 26
+            }
+        },
+        {
+            "id": 51,
+            "count": 400,
+            "ingredient": {
+                "id": 7
+            },
+            "recipe": {
+                "id": 27
+            }
+        },
+        {
+            "id": 52,
+            "count": 500,
+            "ingredient": {
+                "id": 4
+            },
+            "recipe": {
+                "id": 28
+            }
+        },
+        {
+            "id": 53,
+            "count": 300,
+            "ingredient": {
+                "id": 28
+            },
+            "recipe": {
+                "id": 29
+            }
+        },
+        {
+            "id": 54,
+            "count": 100,
+            "ingredient": {
+                "id": 32
+            },
+            "recipe": {
+                "id": 29
+            }
+        },
+        {
+            "id": 55,
+            "count": 200,
+            "ingredient": {
+                "id": 24
+            },
+            "recipe": {
+                "id": 30
+            }
+        },
+        {
+            "id": 56,
+            "count": 50,
+            "ingredient": {
+                "id": 34
+            },
+            "recipe": {
+                "id": 30
+            }
+        },
+        {
+            "id": 100,
+            "count": 8,
+            "ingredient": {
+                "id": 36
+            },
+            "recipe": {
+                "id": 5
+            }
+        }
+    ],
+    "recipe_step_links": [
+        {
+            "id": 1,
+            "number": 1,
+            "recipe": {
+                "id": 1
+            },
+            "step": {
+                "id": 1
+            }
+        },
+        {
+            "id": 2,
+            "number": 2,
+            "recipe": {
+                "id": 1
+            },
+            "step": {
+                "id": 2
+            }
+        },
+        {
+            "id": 3,
+            "number": 3,
+            "recipe": {
+                "id": 1
+            },
+            "step": {
+                "id": 3
+            }
+        },
+        {
+            "id": 4,
+            "number": 1,
+            "recipe": {
+                "id": 2
+            },
+            "step": {
+                "id": 4
+            }
+        },
+        {
+            "id": 5,
+            "number": 2,
+            "recipe": {
+                "id": 2
+            },
+            "step": {
+                "id": 5
+            }
+        },
+        {
+            "id": 6,
+            "number": 1,
+            "recipe": {
+                "id": 3
+            },
+            "step": {
+                "id": 6
+            }
+        },
+        {
+            "id": 7,
+            "number": 2,
+            "recipe": {
+                "id": 3
+            },
+            "step": {
+                "id": 7
+            }
+        },
+        {
+            "id": 8,
+            "number": 1,
+            "recipe": {
+                "id": 4
+            },
+            "step": {
+                "id": 8
+            }
+        },
+        {
+            "id": 9,
+            "number": 2,
+            "recipe": {
+                "id": 4
+            },
+            "step": {
+                "id": 9
+            }
+        },
+        {
+            "id": 10,
+            "number": 1,
+            "recipe": {
+                "id": 5
+            },
+            "step": {
+                "id": 10
+            }
+        },
+        {
+            "id": 11,
+            "number": 2,
+            "recipe": {
+                "id": 5
+            },
+            "step": {
+                "id": 11
+            }
+        },
+        {
+            "id": 12,
+            "number": 3,
+            "recipe": {
+                "id": 5
+            },
+            "step": {
+                "id": 12
+            }
+        },
+        {
+            "id": 13,
+            "number": 1,
+            "recipe": {
+                "id": 6
+            },
+            "step": {
+                "id": 13
+            }
+        },
+        {
+            "id": 14,
+            "number": 2,
+            "recipe": {
+                "id": 6
+            },
+            "step": {
+                "id": 14
+            }
+        },
+        {
+            "id": 15,
+            "number": 1,
+            "recipe": {
+                "id": 7
+            },
+            "step": {
+                "id": 1
+            }
+        },
+        {
+            "id": 16,
+            "number": 2,
+            "recipe": {
+                "id": 7
+            },
+            "step": {
+                "id": 2
+            }
+        },
+        {
+            "id": 17,
+            "number": 1,
+            "recipe": {
+                "id": 8
+            },
+            "step": {
+                "id": 15
+            }
+        },
+        {
+            "id": 18,
+            "number": 2,
+            "recipe": {
+                "id": 8
+            },
+            "step": {
+                "id": 3
+            }
+        },
+        {
+            "id": 19,
+            "number": 1,
+            "recipe": {
+                "id": 9
+            },
+            "step": {
+                "id": 13
+            }
+        },
+        {
+            "id": 20,
+            "number": 2,
+            "recipe": {
+                "id": 9
+            },
+            "step": {
+                "id": 14
+            }
+        },
+        {
+            "id": 21,
+            "number": 1,
+            "recipe": {
+                "id": 10
+            },
+            "step": {
+                "id": 17
+            }
+        },
+        {
+            "id": 22,
+            "number": 2,
+            "recipe": {
+                "id": 10
+            },
+            "step": {
+                "id": 18
+            }
+        },
+        {
+            "id": 23,
+            "number": 1,
+            "recipe": {
+                "id": 11
+            },
+            "step": {
+                "id": 23
+            }
+        },
+        {
+            "id": 24,
+            "number": 2,
+            "recipe": {
+                "id": 11
+            },
+            "step": {
+                "id": 24
+            }
+        },
+        {
+            "id": 25,
+            "number": 1,
+            "recipe": {
+                "id": 12
+            },
+            "step": {
+                "id": 25
+            }
+        },
+        {
+            "id": 26,
+            "number": 1,
+            "recipe": {
+                "id": 13
+            },
+            "step": {
+                "id": 26
+            }
+        },
+        {
+            "id": 27,
+            "number": 1,
+            "recipe": {
+                "id": 14
+            },
+            "step": {
+                "id": 19
+            }
+        },
+        {
+            "id": 28,
+            "number": 2,
+            "recipe": {
+                "id": 14
+            },
+            "step": {
+                "id": 20
+            }
+        },
+        {
+            "id": 29,
+            "number": 1,
+            "recipe": {
+                "id": 15
+            },
+            "step": {
+                "id": 21
+            }
+        },
+        {
+            "id": 30,
+            "number": 2,
+            "recipe": {
+                "id": 15
+            },
+            "step": {
+                "id": 22
+            }
+        },
+        {
+            "id": 31,
+            "number": 1,
+            "recipe": {
+                "id": 16
+            },
+            "step": {
+                "id": 30
+            }
+        },
+        {
+            "id": 32,
+            "number": 2,
+            "recipe": {
+                "id": 16
+            },
+            "step": {
+                "id": 31
+            }
+        },
+        {
+            "id": 33,
+            "number": 3,
+            "recipe": {
+                "id": 16
+            },
+            "step": {
+                "id": 32
+            }
+        },
+        {
+            "id": 34,
+            "number": 1,
+            "recipe": {
+                "id": 17
+            },
+            "step": {
+                "id": 33
+            }
+        },
+        {
+            "id": 35,
+            "number": 2,
+            "recipe": {
+                "id": 17
+            },
+            "step": {
+                "id": 34
+            }
+        },
+        {
+            "id": 36,
+            "number": 1,
+            "recipe": {
+                "id": 18
+            },
+            "step": {
+                "id": 35
+            }
+        },
+        {
+            "id": 37,
+            "number": 2,
+            "recipe": {
+                "id": 18
+            },
+            "step": {
+                "id": 36
+            }
+        },
+        {
+            "id": 38,
+            "number": 1,
+            "recipe": {
+                "id": 19
+            },
+            "step": {
+                "id": 37
+            }
+        },
+        {
+            "id": 39,
+            "number": 2,
+            "recipe": {
+                "id": 19
+            },
+            "step": {
+                "id": 38
+            }
+        },
+        {
+            "id": 40,
+            "number": 1,
+            "recipe": {
+                "id": 20
+            },
+            "step": {
+                "id": 21
+            }
+        },
+        {
+            "id": 41,
+            "number": 2,
+            "recipe": {
+                "id": 20
+            },
+            "step": {
+                "id": 22
+            }
+        },
+        {
+            "id": 42,
+            "number": 1,
+            "recipe": {
+                "id": 21
+            },
+            "step": {
+                "id": 39
+            }
+        },
+        {
+            "id": 43,
+            "number": 2,
+            "recipe": {
+                "id": 21
+            },
+            "step": {
+                "id": 40
+            }
+        },
+        {
+            "id": 44,
+            "number": 1,
+            "recipe": {
+                "id": 22
+            },
+            "step": {
+                "id": 41
+            }
+        },
+        {
+            "id": 45,
+            "number": 2,
+            "recipe": {
+                "id": 22
+            },
+            "step": {
+                "id": 42
+            }
+        },
+        {
+            "id": 46,
+            "number": 1,
+            "recipe": {
+                "id": 23
+            },
+            "step": {
+                "id": 43
+            }
+        },
+        {
+            "id": 47,
+            "number": 2,
+            "recipe": {
+                "id": 23
+            },
+            "step": {
+                "id": 44
+            }
+        },
+        {
+            "id": 48,
+            "number": 1,
+            "recipe": {
+                "id": 24
+            },
+            "step": {
+                "id": 45
+            }
+        },
+        {
+            "id": 49,
+            "number": 2,
+            "recipe": {
+                "id": 24
+            },
+            "step": {
+                "id": 46
+            }
+        },
+        {
+            "id": 50,
+            "number": 1,
+            "recipe": {
+                "id": 25
+            },
+            "step": {
+                "id": 47
+            }
+        },
+        {
+            "id": 51,
+            "number": 2,
+            "recipe": {
+                "id": 25
+            },
+            "step": {
+                "id": 48
+            }
+        },
+        {
+            "id": 52,
+            "number": 1,
+            "recipe": {
+                "id": 26
+            },
+            "step": {
+                "id": 49
+            }
+        },
+        {
+            "id": 53,
+            "number": 2,
+            "recipe": {
+                "id": 26
+            },
+            "step": {
+                "id": 50
+            }
+        },
+        {
+            "id": 54,
+            "number": 1,
+            "recipe": {
+                "id": 27
+            },
+            "step": {
+                "id": 49
+            }
+        },
+        {
+            "id": 55,
+            "number": 2,
+            "recipe": {
+                "id": 27
+            },
+            "step": {
+                "id": 50
+            }
+        },
+        {
+            "id": 56,
+            "number": 1,
+            "recipe": {
+                "id": 28
+            },
+            "step": {
+                "id": 51
+            }
+        },
+        {
+            "id": 57,
+            "number": 1,
+            "recipe": {
+                "id": 29
+            },
+            "step": {
+                "id": 41
+            }
+        },
+        {
+            "id": 58,
+            "number": 2,
+            "recipe": {
+                "id": 29
+            },
+            "step": {
+                "id": 42
+            }
+        },
+        {
+            "id": 59,
+            "number": 1,
+            "recipe": {
+                "id": 30
+            },
+            "step": {
+                "id": 21
+            }
+        },
+        {
+            "id": 60,
+            "number": 2,
+            "recipe": {
+                "id": 30
+            },
+            "step": {
+                "id": 52
+            }
+        }
+    ],
+    "recipe_steps": [
+        {
+            "id": 1,
+            "name": "Нарезать свёклу и обжарить.",
+            "duration": 15
+        },
+        {
+            "id": 2,
+            "name": "Добавить бульон и варить 45 минут.",
+            "duration": 45
+        },
+        {
+            "id": 3,
+            "name": "Добавить капусту и картофель, варить до готовности.",
+            "duration": 30
+        },
+        {
+            "id": 4,
+            "name": "Нарезать овощи и варёные яйца.",
+            "duration": 10
+        },
+        {
+            "id": 5,
+            "name": "Смешать с майонезом и охладить.",
+            "duration": 5
+        },
+        {
+            "id": 6,
+            "name": "Отварить пельмени согласно инструкции.",
+            "duration": 10
+        },
+        {
+            "id": 7,
+            "name": "Подать со сметаной.",
+            "duration": 2
+        },
+        {
+            "id": 8,
+            "name": "Обжарить курицу с грибами.",
+            "duration": 25
+        },
+        {
+            "id": 9,
+            "name": "Потушить 10 минут.",
+            "duration": 10
+        },
+        {
+            "id": 10,
+            "name": "Порвать листья салата.",
+            "duration": 3
+        },
+        {
+            "id": 11,
+            "name": "Смешать с яйцом и сыром.",
+            "duration": 10
+        },
+        {
+            "id": 12,
+            "name": "Заправить соусом.",
+            "duration": 2
+        },
+        {
+            "id": 13,
+            "name": "Смешать молоко с яйцом.",
+            "duration": 5
+        },
+        {
+            "id": 14,
+            "name": "Вылить в форму и запечь.",
+            "duration": 25
+        },
+        {
+            "id": 15,
+            "name": "Нарезать свёклу и капусту.",
+            "duration": 10
+        },
+        {
+            "id": 16,
+            "name": "Заправить сметаной.",
+            "duration": 5
+        },
+        {
+            "id": 17,
+            "name": "Обжарить говядину.",
+            "duration": 20
+        },
+        {
+            "id": 18,
+            "name": "Добавить рис и специи, тушить.",
+            "duration": 60
+        },
+        {
+            "id": 19,
+            "name": "Нарезать капусту и болгарский перец.",
+            "duration": 10
+        },
+        {
+            "id": 20,
+            "name": "Потушить до мягкости.",
+            "duration": 20
+        },
+        {
+            "id": 21,
+            "name": "Сварить пасту.",
+            "duration": 12
+        },
+        {
+            "id": 22,
+            "name": "Смешать с базиликом, чесноком и пармезаном.",
+            "duration": 8
+        },
+        {
+            "id": 23,
+            "name": "Сварить брокколи.",
+            "duration": 10
+        },
+        {
+            "id": 24,
+            "name": "Измельчить в блендере со сливками.",
+            "duration": 10
+        },
+        {
+            "id": 25,
+            "name": "Запечь капусту с лимоном.",
+            "duration": 35
+        },
+        {
+            "id": 26,
+            "name": "Нарезать картофель и потушить.",
+            "duration": 45
+        },
+        {
+            "id": 27,
+            "name": "Смешать творог с яйцом и запечь.",
+            "duration": 50
+        },
+        {
+            "id": 28,
+            "name": "Смешать пасту с горчицей и маслом.",
+            "duration": 10
+        },
+        {
+            "id": 29,
+            "name": "Добавить сливки и тушить.",
+            "duration": 15
+        },
+        {
+            "id": 30,
+            "name": "Приготовить рис.",
+            "duration": 20
+        },
+        {
+            "id": 31,
+            "name": "Обжарить овощи.",
+            "duration": 10
+        },
+        {
+            "id": 32,
+            "name": "Смешать рис с овощами.",
+            "duration": 5
+        },
+        {
+            "id": 33,
+            "name": "Взбить яйца с молоком.",
+            "duration": 3
+        },
+        {
+            "id": 34,
+            "name": "Обжарить на сковороде.",
+            "duration": 12
+        },
+        {
+            "id": 35,
+            "name": "Очистить и нарезать креветки.",
+            "duration": 5
+        },
+        {
+            "id": 36,
+            "name": "Нарезать авокадо и смешать.",
+            "duration": 10
+        },
+        {
+            "id": 37,
+            "name": "Сварить помидорный суп.",
+            "duration": 25
+        },
+        {
+            "id": 38,
+            "name": "Подсушить гренки и добавить в суп.",
+            "duration": 5
+        },
+        {
+            "id": 39,
+            "name": "Фаршировать перцы мясом и рисом.",
+            "duration": 10
+        },
+        {
+            "id": 40,
+            "name": "Запечь в духовке.",
+            "duration": 60
+        },
+        {
+            "id": 41,
+            "name": "Сформировать сырники.",
+            "duration": 5
+        },
+        {
+            "id": 42,
+            "name": "Обжарить на сковороде.",
+            "duration": 20
+        },
+        {
+            "id": 43,
+            "name": "Нарезать курицу на куски.",
+            "duration": 5
+        },
+        {
+            "id": 44,
+            "name": "Запечь в духовке.",
+            "duration": 30
+        },
+        {
+            "id": 45,
+            "name": "Смешать свеклу, огурцы, яйца.",
+            "duration": 10
+        },
+        {
+            "id": 46,
+            "name": "Заправить сметаной.",
+            "duration": 2
+        },
+        {
+            "id": 47,
+            "name": "Нарезать овощи для салата.",
+            "duration": 10
+        },
+        {
+            "id": 48,
+            "name": "Смешать и заправить маслом.",
+            "duration": 5
+        },
+        {
+            "id": 49,
+            "name": "Обжарить курицу.",
+            "duration": 20
+        },
+        {
+            "id": 50,
+            "name": "Добавить рис и варить до готовности.",
+            "duration": 40
+        },
+        {
+            "id": 51,
+            "name": "Нарезать картофель и тушить.",
+            "duration": 45
+        },
+        {
+            "id": 52,
+            "name": "Приготовить соус из горчицы и сливок.",
+            "duration": 10
+        }
+    ],
+    "measure_units": [
+        {
+            "id": 5,
+            "one": "столовая ложка",
+            "few": "столовые ложки",
+            "many": "столовых ложек"
+        },
+        {
+            "id": 2,
+            "one": "столовая ложка",
+            "few": "столовые ложки",
+            "many": "столовых ложек"
+        },
+        {
+            "id": 6,
+            "one": "чайная ложка",
+            "few": "чайные ложки",
+            "many": "чайных ложек"
+        },
+        {
+            "id": 1,
+            "one": "чайная ложка",
+            "few": "чайные ложки",
+            "many": "чайных ложек"
+        },
+        {
+            "id": 7,
+            "one": "штук",
+            "few": "штуки",
+            "many": "штук"
+        },
+        {
+            "id": 8,
+            "one": "стакан",
+            "few": "стакана",
+            "many": "стаканов"
+        }
+    ]
+}

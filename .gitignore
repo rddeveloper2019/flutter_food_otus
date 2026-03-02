@@ -152,3 +152,5 @@ coverage/
 pubspec.lock
 android/.gradle/
 android/app/key.properties
+/foods_json_server/node_modules
+foods_json_server/package-lock.json
