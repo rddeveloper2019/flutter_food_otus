@@ -102,138 +102,156 @@ class _RecipeFormPageState extends State<RecipeFormPage> {
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16),
-          child: Form(
-            key: _newRecipeFormKey,
-            child: Column(
-              children: [
-                AppInput(
-                  labelText: "Название рецепта",
-                  controller: _nameCtr,
-                  validator: validateRecipeName,
-                ),
-                SizedBox(height: 17),
-                AddPhotoWidget(
-                  text: 'Добавить фото рецепта',
-                  photo: _recipePhoto ?? '',
-                  onClick: () {
-                    FocusScope.of(
-                      context,
-                    ).unfocus(disposition: UnfocusDisposition.scope);
-                    setState(() {
-                      _recipePhoto =
-                          "https://cdn.dummyjson.com/recipe-images/${Random().nextInt(50)}.webp";
-                    });
-                  },
-                ),
-
-                SizedBox(height: 17),
-                DetailsList(
-                  list: _ingredients.map((ingredient) {
-                    final formattedAmount = formatIngredientAmount(
-                      count: ingredient.count,
-                      measure: (
-                        one: ingredient.measureUnit.one,
-                        few: ingredient.measureUnit.few,
-                        many: ingredient.measureUnit.many,
-                      ),
-                    );
-
-                    return DetailCard(
-                      title: ingredient.name,
-                      text: formattedAmount,
-                      onEdit: () {},
-                      onDelete: () {},
-                    );
-                  }).toList(),
-                  buttonText: 'Добавить ингредиент',
-                  onAdd: () async {
-                    FocusScope.of(
-                      context,
-                    ).unfocus(disposition: UnfocusDisposition.scope);
-                    final input = await showDialog<IngredientInputResult>(
-                      context: context,
-                      builder: (context) => const AddIngredientDialog(),
-                    );
-
-                    if (input != null) {
-                      final name = input.name;
-                      final count = input.ingredient.count;
-                      final measureData = input.ingredient.measure;
-
-                      setState(() {
-                        _ingredients.add(
-                          IngredientView(
-                            name: name,
-                            count: count,
-                            measureUnit: MeasureUnit(
-                              one: measureData.one,
-                              few: measureData.few,
-                              many: measureData.many,
+          child: OrientationBuilder(
+            builder: (context, orientation) {
+              return LayoutBuilder(
+                builder: (context, constraints) {
+                  final maxWidth = orientation == Orientation.landscape
+                      ? constraints.maxWidth * 0.5
+                      : constraints.maxWidth;
+                  return Center(
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(maxWidth: maxWidth),
+                      child: Form(
+                        key: _newRecipeFormKey,
+                        child: Column(
+                          children: [
+                            AppInput(
+                              labelText: "Название рецепта",
+                              controller: _nameCtr,
+                              validator: validateRecipeName,
                             ),
-                          ),
-                        );
-                      });
-                    }
-                  },
-                  title: 'Ингредиенты',
-                  emptyText: 'нет ингредиентов',
-                ),
-                SizedBox(height: 17),
-                DetailsList(
-                  list: _steps.asMap().entries.map((entry) {
-                    final index = entry.key;
-                    final step = entry.value;
-                    return DetailCard(
-                      title: "Шаг ${index + 1}",
-                      text: step.name,
-                      onEdit: () {},
-                      onDelete: () {},
-                      bottomText: formatDuration(step.duration),
-                    );
-                  }).toList(),
-                  buttonText: 'Добавить шаг',
-                  onAdd: () async {
-                    FocusScope.of(
-                      context,
-                    ).unfocus(disposition: UnfocusDisposition.scope);
-                    final input = await showDialog<StepInputResult>(
-                      context: context,
-                      builder: (context) => const AddStepDialog(),
-                    );
+                            SizedBox(height: 17),
+                            AddPhotoWidget(
+                              text: 'Добавить фото рецепта',
+                              photo: _recipePhoto ?? '',
+                              onClick: () {
+                                FocusScope.of(context).unfocus(
+                                  disposition: UnfocusDisposition.scope,
+                                );
+                                setState(() {
+                                  _recipePhoto =
+                                      "https://cdn.dummyjson.com/recipe-images/${Random().nextInt(50)}.webp";
+                                });
+                              },
+                            ),
 
-                    if (input != null) {
-                      final name = input.name;
-                      final minutes = input.minutes;
-                      final seconds = input.seconds;
+                            SizedBox(height: 17),
+                            DetailsList(
+                              list: _ingredients.map((ingredient) {
+                                final formattedAmount = formatIngredientAmount(
+                                  count: ingredient.count,
+                                  measure: (
+                                    one: ingredient.measureUnit.one,
+                                    few: ingredient.measureUnit.few,
+                                    many: ingredient.measureUnit.many,
+                                  ),
+                                );
 
-                      setState(() {
-                        _steps.add(
-                          RecipeStep(
-                            name: name,
-                            duration: minutes * 60 + seconds,
-                          ),
-                        );
-                      });
-                    }
-                  },
-                  title: 'Шаги приготовления',
-                  emptyText: 'нет шагов приготовления',
-                ),
-                SizedBox(height: 17),
-                AppButton(
-                  text: 'Добавить ингредиент',
-                  disabled: disabled,
-                  onPressed: () async {
-                    FocusScope.of(
-                      context,
-                    ).unfocus(disposition: UnfocusDisposition.scope);
-                    await onSubmit();
-                    Navigator.of(context).pop(true);
-                  },
-                  filled: true,
-                ),
-              ],
-            ),
+                                return DetailCard(
+                                  title: ingredient.name,
+                                  text: formattedAmount,
+                                  onEdit: () {},
+                                  onDelete: () {},
+                                );
+                              }).toList(),
+                              buttonText: 'Добавить ингредиент',
+                              onAdd: () async {
+                                FocusScope.of(context).unfocus(
+                                  disposition: UnfocusDisposition.scope,
+                                );
+                                final input =
+                                    await showDialog<IngredientInputResult>(
+                                      context: context,
+                                      builder: (context) =>
+                                          const AddIngredientDialog(),
+                                    );
+
+                                if (input != null) {
+                                  final name = input.name;
+                                  final count = input.ingredient.count;
+                                  final measureData = input.ingredient.measure;
+
+                                  setState(() {
+                                    _ingredients.add(
+                                      IngredientView(
+                                        name: name,
+                                        count: count,
+                                        measureUnit: MeasureUnit(
+                                          one: measureData.one,
+                                          few: measureData.few,
+                                          many: measureData.many,
+                                        ),
+                                      ),
+                                    );
+                                  });
+                                }
+                              },
+                              title: 'Ингредиенты',
+                              emptyText: 'нет ингредиентов',
+                            ),
+                            SizedBox(height: 17),
+                            DetailsList(
+                              list: _steps.asMap().entries.map((entry) {
+                                final index = entry.key;
+                                final step = entry.value;
+                                return DetailCard(
+                                  title: "Шаг ${index + 1}",
+                                  text: step.name,
+                                  onEdit: () {},
+                                  onDelete: () {},
+                                  bottomText: formatDuration(step.duration),
+                                );
+                              }).toList(),
+                              buttonText: 'Добавить шаг',
+                              onAdd: () async {
+                                FocusScope.of(context).unfocus(
+                                  disposition: UnfocusDisposition.scope,
+                                );
+                                final input = await showDialog<StepInputResult>(
+                                  context: context,
+                                  builder: (context) => const AddStepDialog(),
+                                );
+
+                                if (input != null) {
+                                  final name = input.name;
+                                  final minutes = input.minutes;
+                                  final seconds = input.seconds;
+
+                                  setState(() {
+                                    _steps.add(
+                                      RecipeStep(
+                                        name: name,
+                                        duration: minutes * 60 + seconds,
+                                      ),
+                                    );
+                                  });
+                                }
+                              },
+                              title: 'Шаги приготовления',
+                              emptyText: 'нет шагов приготовления',
+                            ),
+                            SizedBox(height: 17),
+                            AppButton(
+                              text: 'Добавить ингредиент',
+                              disabled: disabled,
+                              onPressed: () async {
+                                FocusScope.of(context).unfocus(
+                                  disposition: UnfocusDisposition.scope,
+                                );
+                                await onSubmit();
+                                Navigator.of(context).pop(true);
+                              },
+                              filled: true,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              );
+            },
           ),
         ),
       ),
