@@ -59,40 +59,61 @@ class _AddIngredientDialogState extends State<AddIngredientDialog> {
           right: 16,
           bottom: 30,
         ),
-        child: Form(
-          key: _formKey,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text('Ингредиент', style: TextStyle(fontSize: 16)),
-              const SizedBox(height: 16),
-              AppInput(
-                labelText: "Название ингредиента",
-                controller: _nameController,
-                validator: validIngredientName,
-              ),
-              const SizedBox(height: 12),
-              AppInput(
-                labelText: "Количество",
-                controller: _countController,
-                validator: validIngredientCount,
-              ),
-              const SizedBox(height: 50),
-              Align(
-                alignment: AlignmentGeometry.center,
-                child: AppButton(
-                  filled: true,
-                  text:
-                      _nameController.text.isNotEmpty &&
-                          _countController.text.isNotEmpty
-                      ? 'Сохранить'
-                      : 'Добавить',
-                  onPressed: onSubmit,
-                ),
-              ),
-            ],
-          ),
+        child: OrientationBuilder(
+          builder: (context, orientation) {
+            return LayoutBuilder(
+              builder: (context, constraints) {
+                final maxWidth = orientation == Orientation.landscape
+                    ? constraints.maxWidth * 0.5
+                    : constraints.maxWidth;
+                return SingleChildScrollView(
+                  child: Center(
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(maxWidth: maxWidth),
+                      child: Form(
+                        key: _formKey,
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text(
+                              'Ингредиент',
+                              style: TextStyle(fontSize: 16),
+                            ),
+                            const SizedBox(height: 16),
+                            AppInput(
+                              labelText: "Название ингредиента",
+                              controller: _nameController,
+                              validator: validIngredientName,
+                            ),
+                            const SizedBox(height: 12),
+                            AppInput(
+                              labelText: "Количество",
+                              controller: _countController,
+                              validator: validIngredientCount,
+                            ),
+                            const SizedBox(height: 50),
+                            Align(
+                              alignment: AlignmentGeometry.center,
+                              child: AppButton(
+                                filled: true,
+                                text:
+                                    _nameController.text.isNotEmpty &&
+                                        _countController.text.isNotEmpty
+                                    ? 'Сохранить'
+                                    : 'Добавить',
+                                onPressed: onSubmit,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                );
+              },
+            );
+          },
         ),
       ),
     );
